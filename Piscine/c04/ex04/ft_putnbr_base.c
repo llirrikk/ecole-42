@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	print_result(int clz, char *base, int in_base, long int nbr)
+void	print_result(int clz, char *base, long int in_base, long int nbr)
 {
 	int	i;
 	int	is_first_zero;
@@ -62,7 +62,7 @@ int	not_invalid_argument(char *base, int base_size)
 	int	is_good;
 
 	is_good = 1;
-	if (base_size == 10 || base_size == 2 || base_size > 1)
+	if ((base_size == 10 || base_size == 2) && base_size > 1)
 		is_good = 1;
 	else if (base_size == 16 || base_size == 8)
 		is_good = 1;
@@ -85,20 +85,20 @@ int	not_invalid_argument(char *base, int base_size)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int			in_base;
+	long int	in_base;
 	int			count_leading_zeros;
 	long int	long_nbr;
 
 	long_nbr = nbr;
 	count_leading_zeros = 0;
 	in_base = 0;
+	if (!not_invalid_argument(base, ft_strlen(base)))
+		return ;
 	if (nbr == 0)
 	{
 		write(1, &base[0], 1);
 		return ;
 	}
-	if (!not_invalid_argument(base, ft_strlen(base)))
-		return ;
 	if (long_nbr < 0)
 	{
 		write(1, "-", 1);
