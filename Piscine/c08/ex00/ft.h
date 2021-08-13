@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 11:01:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/12 11:02:01 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/13 20:52:28 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/13 20:54:14 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_H
+# define FT_H
 
-char	*ft_strdup(char *src);
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-int	main(void)
-{
-	printf("'%s' == '%s'?\n", "abbbbbbbbbobba", ft_strdup("abbbbbbbbbobba"));
-	printf("'%s' == '%s'?\n", "KJHBFuoyg2oyg287", ft_strdup("KJHBFuoyg2oyg287"));
-	printf("'%s' == '%s'?\n", "IOUY@NTFOH C@UIYGHC@#", ft_strdup("IOUY@NTFOH C@UIYGHC@#"));
-	printf("'%s' == '%s'?\n", "ui23ytro23867r9n3278ny238", ft_strdup("ui23ytro23867r9n3278ny238"));
-}
+#endif
