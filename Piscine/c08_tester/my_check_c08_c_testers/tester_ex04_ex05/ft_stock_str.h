@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.h                                           :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 21:20:35 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/14 14:01:25 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/14 14:52:59 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/14 14:53:31 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS_H
+#ifndef FT_STOCK_STR_H
 
-# define FT_ABS_H
-//# define ABS(Value)	if (Value < 0) Value *= -1
-# define ABS(Value)	(Value < 0) ? Value * (-1) : Value
+# define FT_STOCK_STR_H
+typedef struct s_stock_str
+{
+	int		size;
+	char	*str;
+	char	*copy;
+}	t_stock_str;
 
 #endif
