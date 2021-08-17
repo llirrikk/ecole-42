@@ -6,10 +6,12 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 12:44:40 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/16 15:41:56 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/17 11:22:02 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 

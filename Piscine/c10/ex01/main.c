@@ -6,16 +6,17 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 17:17:23 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/16 18:26:51 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/17 12:21:50 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/errno.h>
 #include <string.h>
-// #include <stdio.h> ??
-
+#include <libgen.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -23,30 +24,43 @@ int		ft_strlen(char *str);
 
 #define ERROR_EXIT_CODE 1
 
-int	display_file(char *file_name)
+int	read_file(int fd)
 {
 	int		ret;
 	char	ch;
-	int		fd;
 
-	fd = open(file_name, O_RDONLY);
 	ret = read(fd, &ch, 1);
-	if (fd < 0 || ret == -1)
-	{
-		return (ERROR_EXIT_CODE);
-	}
 	while (ret != 0)
 	{
 		ft_putchar(ch);
 		ret = read(fd, &ch, 1);
 		if (ret == -1)
-			return (ERROR_EXIT_CODE);
+		{
+			return (errno);
+		}
 	}
-	close(fd);
 	return (0);
 }
 
-void	scan_console()
+int	open_file(char *file_name)
+{
+	int	fd;
+	int	my_errno;
+
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+	{
+		return (errno);
+	}
+	my_errno = read_file(fd);
+	if (my_errno != 0)
+		return (my_errno);
+	if (close(fd) == -1)
+		return (errno);
+	return (0);
+}
+
+void	scan_console(void)
 {
 	int		ret;
 	char	ch;
@@ -59,50 +73,51 @@ void	scan_console()
 	}
 }
 
-// ???
-int	is_argv_equal_mm(char *argv, int i)
-{
-	if (i == 1)
-		return (argv[0] == '-' && argv[1] == '-' && ft_strlen(argv) == 2);
-	else
-		return (0);
-}
-// ???
-
-void	parse_argv(int argc, char **argv)
+int	parse_argv(int argc, char **argv)
 {
 	int	i;
+	int	my_errno;
 
 	i = 1;
 	while (i < argc)
 	{
 		if (argv[i][0] == '-' && ft_strlen(argv[i]) == 1)
 			scan_console();
-		
-		// ???
-		else if (is_argv_equal_mm(argv[i], i))
-			scan_console();
-		// ???
-		
 		else
 		{
-			display_file(argv[i]);
+			my_errno = open_file(argv[i]);
+			if (my_errno != 0)
+			{
+				ft_putstr(basename(argv[0]));
+				ft_putstr(": ");
+				ft_putstr(argv[i]);
+				ft_putstr(": ");
+				ft_putstr(strerror(my_errno));
+				ft_putchar('\n');
+				return (my_errno);
+			}
 		}
 		i++;
 	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
 {
+	int	my_errno;
+
 	if (argc == 0)
 	{
-		//ft_putstr(strerror(errno)); //?
 		ft_putstr("Error!\n");
 		return (ERROR_EXIT_CODE);
 	}
 	if (argc == 1)
 		scan_console();
 	else
-		parse_argv(argc, argv);
+	{
+		my_errno = parse_argv(argc, argv);
+		if (my_errno != 0)
+			return (my_errno);
+	}
 	return (0);
 }
