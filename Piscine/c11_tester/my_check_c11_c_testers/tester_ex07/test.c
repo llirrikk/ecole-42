@@ -18,7 +18,7 @@ void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *));
 
 int main(void)
 {
-	char	*tab[] = {"iugh93jg", "aiugfwgweg0brw", "zh8hgr3", "\0"};
+	char	*tab[] = {"iugh93jg", "aiugfwgweg0brw", "zh8hgr3", (void *)0};
 
 	for (int i = 0; i < 4; i++)
 		printf("%s\n", tab[i]);
