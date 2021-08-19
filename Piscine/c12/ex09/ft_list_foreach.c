@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
+/*   ft_list_foreach.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 18:24:05 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/19 15:04:00 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/19 13:21:13 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/19 15:03:11 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_reverse(t_list **begin_list)
+void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	t_list	*current;
-	t_list	*prev;
-	t_list	*next;
+	t_list	*list_ptr;
 
-	prev = (void *)0;
-	next = (void *)0;
-	current = *begin_list;
-	while (current)
+	while (begin_list)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		list_ptr = begin_list;
+		(*f)(list_ptr->data);
+		begin_list = begin_list->next;
 	}
-	*begin_list = prev;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 17:02:42 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/19 16:57:31 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/19 15:19:27 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/19 16:56:32 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,27 @@
 // 	free(data);
 // }
 
-void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
+void	ft_list_remove_if(	t_list	**begin_list,
+							void	*data_ref,
+							int		(*cmp)(),
+							void	(*free_fct)(void *)
+						 )
 {
-	t_list	*current;
+	t_list	*list_ptr;
 
-	while (begin_list->next)
+	while ((*begin_list)->next)
 	{
-		current = begin_list;
-		begin_list = begin_list->next;
-		free_fct(current->data);
-		free(current);
-		current = (void *)0;
+		list_ptr = *begin_list;
+		*begin_list = (*begin_list)->next;
+		if ((*cmp)(list_ptr->data, data_ref) == 0)
+		{
+			(*free_fct)(list_ptr->data);
+			free(list_ptr);
+		}
 	}
-	free_fct(begin_list->data);
-	free(begin_list);
-	begin_list = (void *)0;
+	if ((*cmp)(list_ptr->data, data_ref) == 0)
+	{
+		(*free_fct)((*begin_list)->data);
+		free(begin_list);
+	}
 }

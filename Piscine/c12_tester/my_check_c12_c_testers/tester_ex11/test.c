@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 18:25:14 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/18 18:29:55 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/19 15:08:26 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/19 15:18:35 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void ft_print_list(struct s_list *begin)
+void	print_data(void *data)
 {
-	while (begin)
-	{
-		printf("%s\n", begin->data);
-		begin = begin->next;
-	}
+	printf("list.data = '%s'\n", data);
 }
 
 t_list	*ft_create_elem(void *data)
@@ -50,7 +46,21 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 		*begin_list = ft_create_elem(data);
 }
 
-void	ft_list_reverse(t_list **begin_list);
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (*(s1 + i) == *(s2 + i))
+	{
+		if (*(s1 + i) == '\0')
+			return (*(s1 + i) - *(s2 + i));
+		i++;
+	}
+	return (*(s1 + i) - *(s2 + i));
+}
+
+t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)());
 
 int main(void)
 {
@@ -61,8 +71,10 @@ int main(void)
 	ft_list_push_back(&list, "Test 3");
 	ft_list_push_back(&list, "Test 4");
 	ft_list_push_back(&list, "Test 5");
+	ft_list_push_back(&list, "Test 5");
+	ft_list_push_back(&list, "Test 6");
 
-	ft_print_list(list);
-	ft_list_reverse(&list);
-	ft_print_list(list);
+	printf("%s\n", ft_list_find(list, "Test 4", &ft_strcmp)->data);
+	printf("%s\n", (ft_list_find(list, "", &ft_strcmp) == (void *)0) ? "it's null" : "KO <---------");
+	printf("%s\n", ft_list_find(list, "Test 5", &ft_strcmp)->data);
 }

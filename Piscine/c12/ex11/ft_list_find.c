@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
+/*   ft_list_find.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 18:24:05 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/19 15:04:00 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/19 15:07:03 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/19 15:16:18 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_reverse(t_list **begin_list)
+t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)())
 {
-	t_list	*current;
-	t_list	*prev;
-	t_list	*next;
+	t_list	*list_ptr;
 
-	prev = (void *)0;
-	next = (void *)0;
-	current = *begin_list;
-	while (current)
+	while (begin_list)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		list_ptr = begin_list;
+		if ((*cmp)(list_ptr->data, data_ref) == 0)
+			return (list_ptr);
+		begin_list = begin_list->next;
 	}
-	*begin_list = prev;
+	return ((void *)0);
 }
