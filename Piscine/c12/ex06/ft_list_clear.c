@@ -6,12 +6,11 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:02:42 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/19 16:57:31 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/19 17:59:31 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdlib.h>
 
 // void	free_fct(void *data)
 // {

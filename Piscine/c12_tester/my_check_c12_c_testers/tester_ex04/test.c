@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:38:58 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/18 16:06:43 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/19 18:01:55 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-t_list	*ft_create_elem(void *data);
+t_list	*ft_create_elem(void *data)
+{
+	t_list	*my_struct;
+
+	my_struct = (t_list *)malloc(sizeof(t_list));
+	if (my_struct == NULL)
+		return (NULL);
+	my_struct->data = data;
+	my_struct->next = NULL;
+	return (my_struct);
+}
 
 /*
 list = ft_create_elem(data);

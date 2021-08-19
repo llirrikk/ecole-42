@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 16:09:14 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/18 17:01:05 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/19 18:03:17 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ void ft_print_list(struct s_list *begin)
 		printf("%s\n", begin->data);
 		begin = begin->next;
 	}
+}
+
+t_list	*ft_create_elem(void *data)
+{
+	t_list	*my_struct;
+
+	my_struct = (t_list *)malloc(sizeof(t_list));
+	if (my_struct == NULL)
+		return (NULL);
+	my_struct->data = data;
+	my_struct->next = NULL;
+	return (my_struct);
 }
 
 t_list	*ft_list_push_strs(int size, char **strs);
