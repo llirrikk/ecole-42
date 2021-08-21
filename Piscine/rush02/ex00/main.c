@@ -96,6 +96,7 @@ void	ft_putstr(char *str);
 void	ft_putchar(char c);
 void	ft_list_push_back_alloc(t_numbers **begin_list, int digit_size, int text_size);
 
+
 int	is_digit(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -130,7 +131,7 @@ char	*str_cleaner(char *dirty)
 	return (clean);
 }
 
-t_numbers	*file_alloc_dict(int fd, t_numbers **dict)
+t_numbers	*file_alloc_dict(int fd)
 {
 	int			ret;
 	char		ch;
@@ -138,6 +139,7 @@ t_numbers	*file_alloc_dict(int fd, t_numbers **dict)
 	int			text_size;
 	int			is_space_started;
 	int			is_double_dot_started;
+	t_numbers	*dict;
 
 	dict = NULL;
 	is_space_started = FALSE;
@@ -152,12 +154,6 @@ t_numbers	*file_alloc_dict(int fd, t_numbers **dict)
 		if (is_digit(ch) && !is_space_started && !is_double_dot_started)
 			digit_size++;
 
-
-		if (ch == ':')
-		{
-			is_double_dot_started = TRUE;
-			is_space_started = FALSE;
-		}
 		is_space_started = FALSE;
 		if (ch == ' ' && is_double_dot_started)
 			is_space_started = TRUE;
@@ -165,11 +161,16 @@ t_numbers	*file_alloc_dict(int fd, t_numbers **dict)
 		if (is_printable(ch) && !is_space_started && is_double_dot_started)
 			text_size++;
 
+		if (ch == ':')
+		{
+			is_double_dot_started = TRUE;
+			is_space_started = FALSE;
+		}
 
 		if (ch == '\n')
 		{
-			ft_list_push_back_alloc(&dict, digit_size+1, text_size-1+1);
-			printf("digit_size=%d\ttext_size=%d\n", digit_size+1, text_size-1+1);
+			//ft_list_push_back_alloc(&dict, digit_size+1, text_size+1);
+			printf("digit_size=%d\ttext_size=%d\n", digit_size, text_size);
 			text_size = 0;
 			digit_size = 0;
 			is_space_started = FALSE;
@@ -183,76 +184,20 @@ t_numbers	*file_alloc_dict(int fd, t_numbers **dict)
 	return (dict);
 }
 
-t_numbers	*file_fill_dict(int fd, t_numbers **dict)
-{
-	int			ret;
-	char		ch;
-	t_numbers	*dict;
-	int			digit_size;
-	int			text_size;
-	int			is_space_started;
-	int			is_double_dot_started;
-	int			i;
-
-	i = 0;
-	is_space_started = FALSE;
-	is_double_dot_started = FALSE;
-	digit_size = 0;
-	text_size = 0;
-	ret = read(fd, &ch, 1);
-	while (ret != 0)
-	{
-		if (ch == ' ' && !is_double_dot_started)
-			is_space_started = TRUE;
-		if (is_digit(ch) && !is_space_started && !is_double_dot_started)
-			digit_size++;
-
-
-		if (ch == ':')
-		{
-			is_double_dot_started = TRUE;
-			is_space_started = FALSE;
-		}
-		is_space_started = FALSE;
-		if (ch == ' ' && is_double_dot_started)
-			is_space_started = TRUE;
-
-		if (is_printable(ch) && !is_space_started && is_double_dot_started)
-			text_size++;
-
-
-		if (ch == '\n')
-		{
-
-			//ft_list_push_back_alloc(&dict, digit_size+1, text_size-1+1);
-			//printf("digit_size=%d\ttext_size=%d\n", digit_size+1, text_size-1+1);
-			text_size = 0;
-			digit_size = 0;
-			is_space_started = FALSE;
-			is_double_dot_started = FALSE;
-			i++;
-		}
-
-
-
-		ret = read(fd, &ch, 1);
-	}
-	return (dict);
-}
-
-t_numbers	*open_file(char *file_name, **dict)
+t_numbers	*open_file(char *file_name)
 {
 	int			fd;
+	t_numbers	*dict;
 
 	fd = open(file_name, O_RDONLY);
-	dict = file_alloc_dict(fd, &dict);
+	dict = file_alloc_dict(fd);
 	close(fd);
 	
 
 
-	fd = open(file_name, O_RDONLY);
-	dict = file_fill_dict(fd, &dict);
-	close(fd);
+	// fd = open(file_name, O_RDONLY);
+	// dict = file_fill_dict(fd);
+	// close(fd);
 
 
 	return (dict);
@@ -262,7 +207,7 @@ t_numbers	*parse_dict(char *file)
 {
 	t_numbers	*dict;
 
-	dict = open_file(file, &dict);
+	dict = open_file(file);
 	return (dict);
 }
 
@@ -286,4 +231,6 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_putstr("Error (argc)\n");
+
+	(void) dict;
 }

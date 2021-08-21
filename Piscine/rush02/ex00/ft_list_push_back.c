@@ -28,8 +28,8 @@ void	ft_list_push_back(t_numbers **begin_list, char *digit, char *text)
 		list = *begin_list;
 		while (list->next)
 			list = list->next;
-		list->next = ft_create_elem_alloc(digit_size, text_size);
+		list->next = ft_create_elem(digit, text);
 	}
 	else
-		*begin_list = ft_create_elem_alloc(digit_size, text_size);
+		*begin_list = ft_create_elem(digit, text);
 }
