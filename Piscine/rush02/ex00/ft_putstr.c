@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_apply_suffix.c                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sserwyn <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 20:20:21 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/20 20:22:18 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/09 12:36:09 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/09 12:36:22 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include <unistd.h>
 
-void	btree_apply_suffix(t_btree *root, void (*applyf)(void *))
+void	ft_putchar(char c)
 {
-	if (root)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*(str + i) != '\0')
 	{
-		if (root->left)
-			btree_apply_suffix(root->left, applyf);
-		if (root->right)
-			btree_apply_suffix(root->right, applyf);
-		(*applyf)(root->item);
+		ft_putchar(*(str + i));
+		i++;
 	}
 }
