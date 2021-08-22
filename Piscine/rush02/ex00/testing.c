@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/22 12:13:30 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/22 13:22:41 by sserwyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h> // <------------------------------------------------
 
@@ -23,23 +35,19 @@ int	is_printable(char c)
 	return (FALSE);
 }
 
-char    *ft_strcpy(char *dest, char *src)
+typedef struct s_numbers
 {
-        int     i;
+	char				*digit;
+	char				*text;
+	struct s_numbers	*next;
+}	t_numbers;
 
-        i = 0;
-        while (*(src + i) != '\0')
-        {
-                *(dest + i) = *(src + i);
-                i++;
-        }
-        *(dest + i) = '\0';
-        return (dest);
-}
+char	*ft_realloc(char *old, char ch);
+void	ft_list_push_back(t_numbers **begin_list, char *digit, char *text);
 
 int main(void)
 {
-    int         fd;
+	int			fd;
 	int			ret;
 	char		ch;
 	int			digit_size;
@@ -47,23 +55,16 @@ int main(void)
 	int			is_space_started;
 	int			is_double_dot_started;
 
-    
-    fd = open("numbers.dict", O_RDONLY);
-	ret = read(fd, &ch, 1);
-    int lines = 0;
-    while (ret != 0)
-    {   
-        lines++;     
-        ret = read(fd, &ch, 1);
-    }
-    close(fd);
+	t_numbers	*dict;
 
+	char 		*digit;
+	char		*text;
 
-    char **digits;
-    char **texts;
-
-    digits = (char**)malloc(sizeof(char*) * lines);
-    texts = (char**)malloc(sizeof(char*) * lines);
+	dict = NULL;
+	digit = malloc(sizeof(char));
+	text = malloc(sizeof(char));
+	digit[0] = '\0';
+	text[0] = '\0';
 
 
 	is_space_started = FALSE;
@@ -71,22 +72,29 @@ int main(void)
 	digit_size = 0;
 	text_size = 0;
 
-    fd = open("numbers.dict", O_RDONLY);
+	fd = open("numbers.dict", O_RDONLY);
 	ret = read(fd, &ch, 1);
-    lines = 0;
-    while (ret != 0)
-    {
-        if (ch == ' ' && !is_double_dot_started)
+	while (ret != 0)
+	{
+		if (ch == ' ' && !is_double_dot_started)
 			is_space_started = TRUE;
 		if (is_digit(ch) && !is_space_started && !is_double_dot_started)
+		{
+			digit = ft_realloc(digit, ch);
+			//printf("ch = %c\tdigit = %s\n", ch, digit);
 			digit_size++;
+		}
 
 		is_space_started = FALSE;
 		if (ch == ' ' && is_double_dot_started)
 			is_space_started = TRUE;
 
 		if (is_printable(ch) && !is_space_started && is_double_dot_started)
+		{
+			text = ft_realloc(text, ch);
+			//printf("ch = %c\ttext = %s\n", ch, text);
 			text_size++;
+		}
 
 		if (ch == ':')
 		{
@@ -96,59 +104,28 @@ int main(void)
 
 		if (ch == '\n')
 		{
-            lines++;
-			//ft_list_push_back_alloc(&dict, digit_size+1, text_size+1);
-			printf("digit_size=%d\ttext_size=%d\n", digit_size, text_size);
-            digits[lines] = (char *)malloc(sizeof(char) * (digit_size + 1));
-            texts[lines] = (char *)malloc(sizeof(char) * (text_size + 1));
-			
-            text_size = 0;
+			ft_list_push_back(&dict, digit, text);
+
+			//printf("digit_size=%d\ttext_size=%d\n", digit_size, text_size);
+			// printf("text = %s\n", dict->text);
+			// printf("digit = %s\n", dict->digit);
+
+
+			digit = malloc(sizeof(char));
+			text = malloc(sizeof(char));
+			digit[0] = '\0';
+			text[0] = '\0';
+
+			text_size = 0;
 			digit_size = 0;
 			is_space_started = FALSE;
 			is_double_dot_started = FALSE;
 		}
-        ret = read(fd, &ch, 1);
-    }
-    close(fd);
+		ret = read(fd, &ch, 1);
+	}
+	close(fd);
 
 
-    lines = 0;
-    fd = open("numbers.dict", O_RDONLY);
-	ret = read(fd, &ch, 1);
-    int q1 = 0;
-    int q2 = 0;
-    while (ret != 0)
-    {
-        if (ch == ' ' && !is_double_dot_started)
-			is_space_started = TRUE;
-		if (is_digit(ch) && !is_space_started && !is_double_dot_started)
-            digits[q1++] = ch;        
-        digits[q1] = '\0';
+	
 
-		is_space_started = FALSE;
-		if (ch == ' ' && is_double_dot_started)
-			is_space_started = TRUE;
-
-		if (is_printable(ch) && !is_space_started && is_double_dot_started)
-			texts[q2++] = ch;
-        texts[q2] = '\0';
-
-		if (ch == ':')
-		{
-			is_double_dot_started = TRUE;
-			is_space_started = FALSE;
-		}
-
-		if (ch == '\n')
-		{
-			//ft_list_push_back_alloc(&dict, digit_size+1, text_size+1);
-			printf("digits=%s\ttexts=%s\n", digits[lines], texts[lines]);
-
-            lines++;
-			is_space_started = FALSE;
-			is_double_dot_started = FALSE;
-		}
-        ret = read(fd, &ch, 1);
-    }
-    close(fd);
 }

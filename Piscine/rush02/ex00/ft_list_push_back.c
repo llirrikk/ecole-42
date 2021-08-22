@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:38:34 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/21 19:20:44 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/22 12:49:13 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ typedef struct s_numbers
 	struct s_numbers	*next;
 }	t_numbers;
 
-t_numbers	*ft_create_elem(int digit_size, int text_size);
+t_numbers	*ft_create_elem(char *digit, char *text);
 
 void	ft_list_push_back(t_numbers **begin_list, char *digit, char *text)
 {

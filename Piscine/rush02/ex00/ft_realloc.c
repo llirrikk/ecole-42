@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 13:30:25 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 12:44:00 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/22 12:07:16 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/22 13:21:23 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-typedef struct s_numbers
-{
-	char				*digit;
-	char				*text;
-	struct s_numbers	*next;
-}	t_numbers;
+int	ft_strlen(char *str);
 
-t_numbers	*ft_create_elem(char *digit, char *text)
+char	*ft_realloc(char *old, char ch)
 {
-	t_numbers	*my_struct;
+	char	*new;
+	int		i;
 
-	my_struct = (t_numbers *)malloc(sizeof(t_numbers));
-	if (my_struct == NULL)
-		return (NULL);
-	my_struct->digit = digit;
-	my_struct->text = text;
-	my_struct->next = NULL;
-	return (my_struct);
+	new = malloc(sizeof(char) * (ft_strlen(old) + 2));
+	i = 0;
+	while (i < ft_strlen(old))
+	{
+		new[i] = old[i];
+		i++;
+	}
+	new[i++] = ch;
+	new[i] = '\0';
+	//free(old);
+	return (new);
 }
