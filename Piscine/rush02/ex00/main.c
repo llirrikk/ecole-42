@@ -6,12 +6,11 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 14:29:18 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 16:21:50 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/22 20:52:47 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> // <------------------------------------------------
 
 #define DEFAULT_DICT "numbers.dict"
 #define TRUE 1
@@ -26,10 +25,11 @@ typedef struct s_numbers
 
 void		ft_putstr(char *str);
 void		ft_putchar(char c);
-char		*argv_cleaner(char *dirty);
+char		*argv_cleaner(char *str);
 t_numbers	*parsing(char *file_name);
 
 void		number_finder(t_numbers *dict, char *digit);
+t_numbers	*remove_all_list(t_numbers *head);
 
 int	main(int argc, char **argv)
 {
@@ -47,12 +47,12 @@ int	main(int argc, char **argv)
 	{
 		clear_number = argv_cleaner(argv[2]);
 		dict = parsing(argv[1]);
+	}		
+	if (clear_number == NULL)
+	{
+		ft_putstr("error\n");
+		return (1);
 	}
-	else
-		ft_putstr("Error (argc)\n");
-	printf("clean = %s\n", clear_number);
-	printf("dict->text = %s\n", dict->text);
-	printf("dict->next->text = %s\n", dict->next->text);
-
 	number_finder(dict, clear_number);
+	remove_all_list(dict);
 }

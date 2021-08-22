@@ -5,32 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 16:01:44 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 16:12:54 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/22 16:01:44 by wdoctori          #+#    #+#             */
+/*   Updated: 2021/08/22 20:31:48 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-int	is_digit(char c);
-int	is_printable(char c);
-
-char	*argv_cleaner(char *dirty)
+int	propysksim(char	*str)
 {
-	char	*clean;
-	int		clean_len;
-	int		i;
+	int	f;
 
-	clean_len = 0;
-	while (!(dirty[clean_len] == '\0' || !is_digit(dirty[clean_len])))
-		clean_len++;
-	clean = malloc(sizeof(clean_len) + 1);
+	f = 0;
+	if (*str == '\n' || *str == '\t' || *str == '\f')
+		f = 1;
+	if (*str == '\r' || *str == '\v' || *str == ' ')
+		f = 1;
+	return (f);
+}
+
+int	numberChar(char	*num)
+{
+	int	i;
+	int	b;
+
 	i = 0;
-	while (i < clean_len)
-	{
-		clean[i] = dirty[i];
+	b = 0;
+	while (propysksim(&num [i]))
 		i++;
+	if (!(num[i] >= '0' && num[i] <= '9'))
+		return (-1);
+	while ((num[i] >= '0' && num[i] <= '9') || num[i] == '.')
+	{
+		i++;
+		b++;
+		if (num[i] == '.')
+		{
+			return (-1);
+		}
 	}
-	clean[i] = '\0';
-	return (clean);
+	return (b);
+}
+
+char	*argv_cleaner(char	*str)
+{
+	int		i;
+	int		b;
+	int		s;
+	char	*stroka;
+
+	b = numberChar(str);
+	if (b == -1)
+		return (NULL);
+	stroka = (char *)malloc(sizeof (*stroka) * (b + 1));
+	i = 0;
+	s = 0;
+	while (propysksim(&str [i]))
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		*(stroka + s) = str[i];
+		i++;
+		s++;
+	}
+	*(stroka + s) = '\0';
+	return (stroka);
 }
