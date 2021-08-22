@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   argv_cleaner.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 12:07:16 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 15:51:37 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/22 16:01:44 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/22 16:06:59 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str);
+int	is_digit(char c);
+int	is_printable(char c);
 
-char	*ft_realloc(char *old, char ch)
+char	*argv_cleaner(char *dirty)
 {
-	char	*new;
+	char	*clean;
+	int		clean_len;
 	int		i;
 
-	new = malloc(sizeof(char) * (ft_strlen(old) + 2));
+	clean_len = 0;
+	while (!(dirty[clean_len] == '\0' || !is_digit(dirty[clean_len])))
+		clean_len++;
+	clean = malloc(sizeof(clean_len) + 1);
 	i = 0;
-	while (i < ft_strlen(old))
+	while (i < clean_len)
 	{
-		new[i] = old[i];
+		clean[i] = dirty[i];
 		i++;
 	}
-	new[i++] = ch;
-	new[i] = '\0';
-	return (new);
+	clean[i] = '\0';
+	return (clean);
 }

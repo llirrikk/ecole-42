@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   is_ascii.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 12:07:16 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 15:51:37 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/22 15:56:56 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/22 15:58:03 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#define TRUE 1
+#define FALSE 0
 
-int	ft_strlen(char *str);
-
-char	*ft_realloc(char *old, char ch)
+int	is_digit(char c)
 {
-	char	*new;
-	int		i;
+	if (c >= '0' && c <= '9')
+		return (TRUE);
+	return (FALSE);
+}
 
-	new = malloc(sizeof(char) * (ft_strlen(old) + 2));
-	i = 0;
-	while (i < ft_strlen(old))
-	{
-		new[i] = old[i];
-		i++;
-	}
-	new[i++] = ch;
-	new[i] = '\0';
-	return (new);
+int	is_printable(char c)
+{
+	if (c >= 32 && c <= 126)
+		return (TRUE);
+	return (FALSE);
 }
