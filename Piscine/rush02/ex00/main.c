@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 14:29:18 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 16:09:47 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/22 16:14:03 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ typedef struct s_numbers
 	struct s_numbers	*next;
 }	t_numbers;
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
-
-char	*argv_cleaner(char *dirty);
-
+void		ft_putstr(char *str);
+void		ft_putchar(char c);
+char		*argv_cleaner(char *dirty);
 t_numbers	*parsing(char *file_name);
 
 int	main(int argc, char **argv)

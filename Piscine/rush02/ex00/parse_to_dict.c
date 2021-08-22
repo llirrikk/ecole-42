@@ -6,18 +6,18 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 15:55:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 15:57:39 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/22 16:13:57 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	is_digit(char c);
-int	is_printable(char c);
-char	*ft_realloc(char *old, char ch);
-
 #define TRUE 1
 #define FALSE 0
+
+int		is_digit(char c);
+int		is_printable(char c);
+char	*ft_realloc(char *old, char ch);
 
 typedef struct s_numbers
 {
