@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 12:13:30 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/22 13:22:41 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/22 14:34:28 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,87 +45,73 @@ typedef struct s_numbers
 char	*ft_realloc(char *old, char ch);
 void	ft_list_push_back(t_numbers **begin_list, char *digit, char *text);
 
-int main(void)
+void	init_digit_text(char **digit, char **text)
 {
-	int			fd;
-	int			ret;
+	*digit = malloc(sizeof(char));
+	*text = malloc(sizeof(char));
+	*digit[0] = '\0';
+	*text[0] = '\0';
+}
+
+void	init_is_space_dd(int *a, int *b, int is_space, int is_dd)
+{
+	*a = is_space;
+	*b = is_dd;
+}
+
+void	init_dict_is_a_b(t_numbers **dict, int *a, int *b)
+{
+	*dict = NULL;
+	*a = FALSE;
+	*b = FALSE;
+}
+
+void	digits_in_loop(char ch, int *is_space, int is_dd, char **digit)
+{
+	if (ch == ' ' && !is_dd)
+		*is_space = TRUE;
+	if (is_digit(ch) && !(*is_space) && !is_dd)
+		*digit = ft_realloc(*digit, ch);
+	*is_space = FALSE;
+}
+
+void	texts_in_loop(char ch, int *is_space, int *is_dd, char **text)
+{
+	if (ch == ' ' && *is_dd)
+		*is_space = TRUE;
+	if (is_printable(ch) && !(*is_space) && *is_dd)
+		*text = ft_realloc(*text, ch);
+	if (ch == ':')
+		init_is_space_dd(is_space, is_dd, 0, 1);
+}
+
+// nor[0] = int			fd;
+// nor[1] = int			ret;
+// nor[2] = int			is_space_started;
+// nor[3] = int			is_double_dot_started;
+int	main(void)
+{
+	int			nor[4];
 	char		ch;
-	int			digit_size;
-	int			text_size;
-	int			is_space_started;
-	int			is_double_dot_started;
-
 	t_numbers	*dict;
-
-	char 		*digit;
+	char		*digit;
 	char		*text;
 
-	dict = NULL;
-	digit = malloc(sizeof(char));
-	text = malloc(sizeof(char));
-	digit[0] = '\0';
-	text[0] = '\0';
-
-
-	is_space_started = FALSE;
-	is_double_dot_started = FALSE;
-	digit_size = 0;
-	text_size = 0;
-
-	fd = open("numbers.dict", O_RDONLY);
-	ret = read(fd, &ch, 1);
-	while (ret != 0)
+	init_digit_text(&digit, &text);
+	init_dict_is_a_b(&dict, &nor[2], &nor[3]);
+	nor[0] = open("numbers.dict", O_RDONLY);
+	nor[1] = read(nor[0], &ch, 1);
+	while (nor[1] != 0)
 	{
-		if (ch == ' ' && !is_double_dot_started)
-			is_space_started = TRUE;
-		if (is_digit(ch) && !is_space_started && !is_double_dot_started)
-		{
-			digit = ft_realloc(digit, ch);
-			//printf("ch = %c\tdigit = %s\n", ch, digit);
-			digit_size++;
-		}
-
-		is_space_started = FALSE;
-		if (ch == ' ' && is_double_dot_started)
-			is_space_started = TRUE;
-
-		if (is_printable(ch) && !is_space_started && is_double_dot_started)
-		{
-			text = ft_realloc(text, ch);
-			//printf("ch = %c\ttext = %s\n", ch, text);
-			text_size++;
-		}
-
-		if (ch == ':')
-		{
-			is_double_dot_started = TRUE;
-			is_space_started = FALSE;
-		}
-
+		digits_in_loop(ch, &nor[2], nor[3], &digit);
+		texts_in_loop(ch, &nor[2], &nor[3], &text);
 		if (ch == '\n')
 		{
 			ft_list_push_back(&dict, digit, text);
-
-			//printf("digit_size=%d\ttext_size=%d\n", digit_size, text_size);
-			// printf("text = %s\n", dict->text);
-			// printf("digit = %s\n", dict->digit);
-
-
-			digit = malloc(sizeof(char));
-			text = malloc(sizeof(char));
-			digit[0] = '\0';
-			text[0] = '\0';
-
-			text_size = 0;
-			digit_size = 0;
-			is_space_started = FALSE;
-			is_double_dot_started = FALSE;
+			init_digit_text(&digit, &text);
+			init_is_space_dd(&nor[2], &nor[3], 0, 0);
 		}
-		ret = read(fd, &ch, 1);
+		nor[1] = read(nor[0], &ch, 1);
 	}
-	close(fd);
-
-
-	
-
+	close(nor[0]);
 }
