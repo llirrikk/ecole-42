@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:48:59 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/23 20:52:54 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	str_init(char **str);
 char	**read_file(char *file_name)
 {
 	int		fd;
-	int		ret;
 	int		line_count;
 	char	ch;
 	char	*line;
@@ -36,8 +35,7 @@ char	**read_file(char *file_name)
 		map_error_exit();
 	line_count = 0;
 	str_init(&line);
-	ret = read(fd, &ch, 1);
-	while (ret != 0)
+	while (read(fd, &ch, 1) != 0)
 	{
 		if (ch != '\n')
 			line = ft_realloc(line, ch);
@@ -55,10 +53,11 @@ char	**read_file(char *file_name)
 			if (line_count - 1 == number_1st_line(l1st))
 				break ;
 		}
-		ret = read(fd, &ch, 1);
 	}
 	close(fd);
 	first_line_checker(l1st);
 	map_checker(map, l1st);
 	return (map);
 }
+
+// ОШИБКА ЕСЛИ МАР ЕРРОР

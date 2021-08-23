@@ -6,11 +6,12 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 13:10:10 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:48:17 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/23 20:05:22 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h> // <----------------
+#include <stdlib.h>
 
 char	**read_console(void);
 char	**read_file(char *file_name);
@@ -31,7 +32,26 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	(void) argv;
 
-	//free(map);
+
+
+
+	
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("(%c)", map[i][j]);
+		}
+		printf("\n");
+	}
+	
+	// FREE
+	for (int i = 0; i < 3; i++)
+	{
+		free(map[i]);
+	}
+	free(map);
+	// FREE
 }
