@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_console_main.c                                :+:      :+:    :+:   */
+/*   read_file_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/23 19:18:13 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:49:22 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/23 19:48:59 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ char	*ft_realloc(char *old, char ch);
 void	first_line_checker(char *line);
 int		number_1st_line(char *line);
 void	map_checker(char **map, char *fline);
-
+void	map_error_exit(void);
 void	str_init(char **str);
 
-char	**read_console(void)
+char	**read_file(char *file_name)
 {
+	int		fd;
 	int		ret;
 	int		line_count;
 	char	ch;
@@ -30,9 +31,12 @@ char	**read_console(void)
 	char	*l1st;
 	char	**map;
 
+	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+		map_error_exit();
 	line_count = 0;
 	str_init(&line);
-	ret = read(1, &ch, 1);
+	ret = read(fd, &ch, 1);
 	while (ret != 0)
 	{
 		if (ch != '\n')
@@ -51,8 +55,9 @@ char	**read_console(void)
 			if (line_count - 1 == number_1st_line(l1st))
 				break ;
 		}
-		ret = read(1, &ch, 1);
+		ret = read(fd, &ch, 1);
 	}
+	close(fd);
 	first_line_checker(l1st);
 	map_checker(map, l1st);
 	return (map);
