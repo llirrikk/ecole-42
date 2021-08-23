@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 18:21:32 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:02:35 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/23 19:29:08 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	number_1st_line(char *line)
 	i = 0;
 	while (i < ft_strlen(line) - 3)
 	{
+		if (!is_digit(line[i]))
+			map_error_exit();
 		number = number * 10 + line[i] - '0';
 		i++;
 	}

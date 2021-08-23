@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_exits.c                                      :+:      :+:    :+:   */
+/*   str_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/23 18:11:46 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:16:58 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/23 19:21:41 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/23 19:22:12 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_putstr_error(char *str);
-
-void	map_error_exit(void)
+void	str_init(char **str)
 {
-	ft_putstr_error("map error\n");
-	exit(1);
+	*str = malloc(sizeof(char));
+	*str[0] = '\0';
 }
