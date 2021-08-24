@@ -15,55 +15,38 @@
 #include <stdlib.h>
 
 char	*ft_realloc(char *old, char ch);
-void	first_line_checker(char *line);
 int		number_1st_line(char *line);
-void	map_checker(char **map, char *fline);
-
-void	first_line_and_map_checker(char **map, char *fline)
-{
-	first_line_checker(fline);
-	map_checker(map, fline);
-}
-
 void	str_init(char **str);
 
-void	str_line_count_init(int *line_count, char **l, int is_inc)
+void	read_console(char *file_name)
 {
-	if (is_inc)
-		*line_count = *line_count + 1;
-	else
-		*line_count = 0;
-	str_init(l);
-}
-
-
-char	**read_console(char **first_line)
-{
-	int		line_count;
 	char	ch;
-	char	*l[2];
-	char	**map;
+	int		fd;
+	int		line_count;
+	//int		user_height;
+	char	*header;
 
-	str_line_count_init(&line_count, &l[0], 0);
+	str_init(&header);
+	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC);
+	// if (fd == -1)
+	// 	map_error_exit();
+
+	//user_height = 2147483647;
+	line_count = 0;
 	while (read(1, &ch, 1) != 0)
 	{
-		if (ch != '\n')
-			l[0] = ft_realloc(l[0], ch);
-		else
+		if (line_count == 0)
+			header = ft_realloc(header, ch);
+		if (ch == '\n')
 		{
-			if (line_count == 0)
+			line_count++;
+			if (line_count == 1)
 			{
-				l[1] = l[0];
-				map = (char **)malloc(sizeof(char *) * (number_1st_line(l[1])));
+				//user_height = number_1st_line(header);
+				free(header);
 			}
-			else
-				map[line_count - 1] = l[0];
-			str_line_count_init(&line_count, &l[0], 1);
-			if (line_count - 1 == number_1st_line(l[1]))
-				break ;
 		}
+		write(fd, &ch, 1);
 	}
-	first_line_and_map_checker(map, l[1]);
-	*first_line = l[1];
-	return (map);
+	close(fd);
 }

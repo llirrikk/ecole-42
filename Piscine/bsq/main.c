@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define TEMP_FILE_NAME "map.temp"
+
 #include <stdio.h> // <----------------
 #include <stdlib.h>
 
-char	**read_console(char **first_line);
+void	read_console(char *file_name);
 char	**read_file(char *file_name, char **first_line);
 int		**map_to_cash(char **map, char *first_line);
 
@@ -27,7 +29,10 @@ int	main(int argc, char **argv)
 	map = NULL;
 	first_line = NULL;
 	if (argc == 1)
-		map = read_console(&first_line);
+	{
+		read_console(TEMP_FILE_NAME);
+		read_file(TEMP_FILE_NAME, &first_line);
+	}
 	else if (argc > 1)
 	{
 		i = 1;
