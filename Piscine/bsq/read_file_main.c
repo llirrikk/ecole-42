@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 20:52:54 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/24 16:58:02 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	map_checker(char **map, char *fline);
 void	map_error_exit(void);
 void	str_init(char **str);
 
-char	**read_file(char *file_name)
+char	**read_file(char *file_name, char **first_line)
 {
 	int		fd;
 	int		line_count;
@@ -37,6 +37,7 @@ char	**read_file(char *file_name)
 	str_init(&line);
 	while (read(fd, &ch, 1) != 0)
 	{
+		//printf("line_count = %d\n", line_count);
 		if (ch != '\n')
 			line = ft_realloc(line, ch);
 		else
@@ -57,6 +58,7 @@ char	**read_file(char *file_name)
 	close(fd);
 	first_line_checker(l1st);
 	map_checker(map, l1st);
+	*first_line = l1st;
 	return (map);
 }
 

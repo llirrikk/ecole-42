@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:18:13 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 20:52:55 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/24 13:34:59 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	str_line_count_init(int *line_count, char **l, int is_inc)
 }
 
 
-char	**read_console(void)
+char	**read_console(char **first_line)
 {
 	int		line_count;
 	char	ch;
@@ -64,5 +64,6 @@ char	**read_console(void)
 		}
 	}
 	first_line_and_map_checker(map, l[1]);
+	*first_line = l[1];
 	return (map);
 }

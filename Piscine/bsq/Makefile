@@ -6,7 +6,7 @@
 #    By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/08/23 19:41:16 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/08/24 13:19:47 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC		= main.c \
 			map_checker.c \
 			read_console_main.c \
 			str_utils.c \
-			read_file_main.c
+			read_file_main.c \
+			solve_main.c
 
 OBJ		= $(SRC:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra
