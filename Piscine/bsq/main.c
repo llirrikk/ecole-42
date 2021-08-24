@@ -39,7 +39,17 @@ int	main(int argc, char **argv)
 	}
 
 
-	printf("IJFE");
+	printf("[main] 1st line = %s\n", first_line);
+
+	// for (int i = 0; i < 10; i++)
+	// {
+	// 	for (int j = 0; j < 10; j++)
+	// 	{
+	// 		printf("%c", map[i][j]);
+	// 	}
+	// 	printf("\n");
+	// }
+
 
 	cash = map_to_cash(map, first_line);
 	(void) cash;

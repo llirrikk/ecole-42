@@ -63,14 +63,12 @@ int	**map_to_cash(char **map, char *first_line)
 	int		i;
 	int		j;
 	char	obstacle;
-	char	empty;
 	int		min_of_3;
 	int		cash_max;
 	int		max_index[2];
 	int		corner_found;
 	int		temp;
 
-	empty = get_map_empty(first_line);
 	obstacle = get_map_obstacle(first_line);
 
 	cash = (int **)malloc(sizeof(int *) * get_map_height(first_line));
