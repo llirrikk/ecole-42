@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:13:35 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/24 16:52:33 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 12:43:41 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ int		number_1st_line(char *line);
 int	get_map_length(char **map)
 {
 	return (ft_strlen(map[0]));
-}
-
-int	get_map_height(char *first_line)
-{
-	return(number_1st_line(first_line));
 }
 
 char	get_map_empty(char *first_line)
@@ -70,20 +65,20 @@ int	**map_to_cash(char **map, char *first_line)
 	int		temp;
 
 	obstacle = get_map_obstacle(first_line);
-
-	cash = (int **)malloc(sizeof(int *) * get_map_height(first_line));
+	cash = (int **)malloc(sizeof(int *) * number_1st_line(first_line));
 	i = 0;
-	while (i < get_map_height(first_line))
+	while (i < number_1st_line(first_line))
 	{
 		cash[i] = (int *)malloc(sizeof(int) * get_map_length(map));
 		i++;
 	}
 
+
 	cash_max = 0;
 	
 
 	i = 0;
-	while (i < get_map_height(first_line))
+	while (i < number_1st_line(first_line))
 	{
 		j = 0;
 		while (j < get_map_length(map))
@@ -117,39 +112,11 @@ int	**map_to_cash(char **map, char *first_line)
 		i++;
 	}
 
-	// printf("\n----------START----------\n");
-	// i = 0;
-	// while (i < get_map_height(first_line))
-	// {
-	// 	j = 0;
-	// 	while (j < get_map_length(map))
-	// 	{
-	// 		printf("%c", map[i][j]);
-	// 		j++;
-	// 	}
-	// 	printf("\n");
-	// 	i++;
-	// }
-
-
-	// printf("\n----------CASH-------------\n");
-	// i = 0;
-	// while (i < get_map_height(first_line))
-	// {
-	// 	j = 0;
-	// 	while (j < get_map_length(map))
-	// 	{
-	// 		printf("%d", cash[i][j]);
-	// 		j++;
-	// 	}
-	// 	printf("\n");
-	// 	i++;
-	// }
 
 	corner_found = 0;
 	temp = cash_max;
 	i = 0;
-	while (i < get_map_height(first_line))
+	while (i < number_1st_line(first_line))
 	{
 		j = 0;
 		while (j < get_map_length(map))

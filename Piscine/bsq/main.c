@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 13:10:10 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/24 16:53:05 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 12:27:58 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 	{
 		read_console(TEMP_FILE_NAME);
-		read_file(TEMP_FILE_NAME, &first_line);
+		map = read_file(TEMP_FILE_NAME, &first_line);
 	}
 	else if (argc > 1)
 	{
