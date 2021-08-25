@@ -6,13 +6,14 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:13:35 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 12:43:41 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 13:46:27 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h> // <----------------
 
+void	ft_putchar(char c);
 int		ft_strlen(char *str);
 int		number_1st_line(char *line);
 
@@ -29,6 +30,11 @@ char	get_map_empty(char *first_line)
 char	get_map_obstacle(char *first_line)
 {
 	return (first_line[ft_strlen(first_line) - 2]);
+}
+
+char	get_map_full(char *first_line)
+{
+	return (first_line[ft_strlen(first_line) - 1]);
 }
 
 int	ft_abs(int n)
@@ -52,74 +58,21 @@ int	get_min_of_3(int left, int left_top, int top)
 	return (min_of_3);
 }
 
-int	**map_to_cash(char **map, char *first_line)
+
+void	print_result(char **map, char *first_line, int cash_max, int *max_index)
 {
-	int		**cash;
-	int		i;
-	int		j;
-	char	obstacle;
-	int		min_of_3;
-	int		cash_max;
-	int		max_index[2];
-	int		corner_found;
-	int		temp;
-
-	obstacle = get_map_obstacle(first_line);
-	cash = (int **)malloc(sizeof(int *) * number_1st_line(first_line));
-	i = 0;
-	while (i < number_1st_line(first_line))
-	{
-		cash[i] = (int *)malloc(sizeof(int) * get_map_length(map));
-		i++;
-	}
-
-
-	cash_max = 0;
-	
-
-	i = 0;
-	while (i < number_1st_line(first_line))
-	{
-		j = 0;
-		while (j < get_map_length(map))
-		{
-			if (i == 0 || j == 0)
-			{
-				if (map[i][j] == obstacle)
-					cash[i][j] = 0;
-				else
-					cash[i][j] = 1;
-			}
-			else
-			{
-				if (map[i][j] == obstacle)
-					cash[i][j] = 0;
-				else
-				{
-					min_of_3 = get_min_of_3(cash[i][j-1], cash[i-1][j-1], cash[i-1][j]);
-					cash[i][j] = min_of_3 + 1;
-				}
-			}
-
-			if (cash_max < cash[i][j])
-			{
-				cash_max = cash[i][j];
-				max_index[0] = i;
-				max_index[1] = j;
-			}
-			j++;
-		}
-		i++;
-	}
-
+	int corner_found;
+	int temp;
+	int	i;
+	int	j;
 
 	corner_found = 0;
 	temp = cash_max;
-	i = 0;
-	while (i < number_1st_line(first_line))
+	i = -1;
+	while (++i < number_1st_line(first_line))
 	{
-		j = 0;
-		while (j < get_map_length(map))
+		j = -1;
+		while (++j < get_map_length(map))
 		{
 
 			if (max_index[0] - (cash_max - 1) == i && max_index[1] - (cash_max - 1) == j)
@@ -128,20 +81,73 @@ int	**map_to_cash(char **map, char *first_line)
 									&& (max_index[0] >= i))
 			{
 				temp--;
-				printf("x");
+				ft_putchar(get_map_full(first_line));
 			}
 			else
-				printf("%c", map[i][j]);
-			j++;
+				ft_putchar(map[i][j]);
 		}
 		temp = cash_max;
-		printf("\n");
-		i++;
+		ft_putchar('\n');
 	}
+}
 
+int	get_cash_max(int *cash_max, int cash)
+{
+	if (*cash_max < cash)
+	{
+		*cash_max = cash;
+		return (1);
+	}
+	return (0);
+}
 
+void	if_i_j_is_0(char **map, int **cash, char *first_line, int i, int j)
+{
+	if (i == 0 || j == 0)
+	{
+		if (map[i][j] == get_map_obstacle(first_line))
+			cash[i][j] = 0;
+		else
+			cash[i][j] = 1;
+	}
+	else
+	{
+		if (map[i][j] == get_map_obstacle(first_line))
+			cash[i][j] = 0;
+		else
+			cash[i][j] = get_min_of_3(cash[i][j-1], cash[i-1][j-1], cash[i-1][j]) + 1;
+	}
+}
 
+void	get_cash_max_index(int *max_i, int *max_j, int i, int j)
+{
+	*max_i = i;
+	*max_j = j;
+}
 
+void	solver(char **map, char *first_line)
+{
+	int		**cash;
+	int		i;
+	int		j;
+	int		cash_max;
+	int		max_index[2];
 
-	return (NULL);
+	cash = (int **)malloc(sizeof(int *) * number_1st_line(first_line));
+	i = -1;
+	while (++i < number_1st_line(first_line))
+		cash[i] = (int *)malloc(sizeof(int) * get_map_length(map));
+	cash_max = 0;
+	i = -1;
+	while (++i < number_1st_line(first_line))
+	{
+		j = -1;
+		while (++j < get_map_length(map))
+		{
+			if_i_j_is_0(map, cash, first_line, i, j);
+			if (get_cash_max(&cash_max, cash[i][j]))
+				get_cash_max_index(&max_index[0], &max_index[1], i, j);
+		}
+	}
+	print_result(map, first_line, cash_max, max_index);
 }

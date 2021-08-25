@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 13:10:10 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 12:27:58 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 13:05:35 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 
 void	read_console(char *file_name);
 char	**read_file(char *file_name, char **first_line);
-int		**map_to_cash(char **map, char *first_line);
+void	solver(char **map, char *first_line);
 
 int	main(int argc, char **argv)
 {
 	int		i;
 	char	*first_line;
 	char	**map;
-	int		**cash;
 
 	map = NULL;
 	first_line = NULL;
@@ -56,8 +55,7 @@ int	main(int argc, char **argv)
 	// }
 
 
-	cash = map_to_cash(map, first_line);
-	(void) cash;
+	solver(map, first_line);
 
 	
 
