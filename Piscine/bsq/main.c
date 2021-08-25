@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 13:10:10 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 18:11:33 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 19:08:13 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	if_data_handle_is_negative_1(char **map, char *first_line, int is_error)
 
 void	do_main(char **map, char *first_line, int is_error)
 {
+	if (map == NULL || first_line == NULL)
+		is_error = 1;
 	if (!is_error)
 		if_data_handle_is_negative_1(map, first_line, is_error);
 	else

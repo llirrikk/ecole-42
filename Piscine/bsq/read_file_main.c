@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 18:11:08 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 18:56:18 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		number_1st_line(char *line);
 void	map_checker(char **map, char *fline);
 void	str_init(char **str);
 int		ft_strlen(char *str);
+int		nb_1st_line_counter(int n);
 
 char	*get_header(int fd)
 {
@@ -97,6 +98,8 @@ char	**read_file(char *file_name, char **header, int *is_error)
 	if (fd == -1)
 		return (NULL);
 	*header = get_header(fd);
+	if (ft_strlen(*header) - nb_1st_line_counter(number_1st_line(*header)) != 3)
+		return (NULL);
 	t.length = get_map_1st_line_length(fd);
 	close(fd);
 	if (fd == -1)

@@ -6,13 +6,26 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 18:21:32 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:44:28 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 19:12:47 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strlen(char *str);
 int		is_digit(char c);
 int		is_printable(char c);
+
+int	nb_1st_line_counter(int n)
+{
+	int	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
 
 int	number_1st_line(char *line)
 {
@@ -47,6 +60,13 @@ int	oef_check(char obstacle, char empty, char full)
 	return (0);
 }
 
+void	map_e_o_f_init(char *a, char *b, char *c, char *line)
+{
+	*a = line[ft_strlen(line) - 3];
+	*b = line[ft_strlen(line) - 2];
+	*c = line[ft_strlen(line) - 1];
+}
+
 int	first_line_checker(char *line)
 {
 	int		i;
@@ -69,9 +89,8 @@ int	first_line_checker(char *line)
 	}
 	if (number_1st_line(line) == 0 || number_1st_line(line) == -1)
 		return (-1);
-	map_e_o_f[0] = line[ft_strlen(line) - 3];
-	map_e_o_f[1] = line[ft_strlen(line) - 2];
-	map_e_o_f[2] = line[ft_strlen(line) - 1];
-	oef_check(map_e_o_f[0], map_e_o_f[1], map_e_o_f[2]);
+	map_e_o_f_init(&map_e_o_f[0], &map_e_o_f[1], &map_e_o_f[2], line);
+	if (oef_check(map_e_o_f[0], map_e_o_f[1], map_e_o_f[2]) == -1)
+		return (-1);
 	return (0);
 }

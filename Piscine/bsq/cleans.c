@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:07:52 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 18:08:43 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 18:54:30 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,17 @@ void	free_map(char **map, char *first_line, int is_error)
 
 	(void) is_error;
 	i = 0;
-	while (i < number_1st_line(first_line))
+	if (map != NULL)
 	{
-		free(map[i]);
-		i++;
+		while (i < number_1st_line(first_line))
+		{
+			free(map[i]);
+			i++;
+		}
+		free(map);
 	}
-	free(map);
-	free(first_line);
+	if (first_line != NULL)
+		free(first_line);
 }
 
 void	free_cash(int **cash, int hight)
@@ -42,10 +46,13 @@ void	free_cash(int **cash, int hight)
 	int	i;
 
 	i = 0;
-	while (i < hight)
+	if (cash != NULL)
 	{
-		free(cash[i]);
-		i++;
+		while (i < hight)
+		{
+			free(cash[i]);
+			i++;
+		}
+		free(cash);
 	}
-	free(cash);
 }
