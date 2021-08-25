@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 16:28:14 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 18:11:08 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,45 @@ char	*get_header(int fd)
 	return (first_line);
 }
 
-char	**get_map(int fd, int hight, int length)
+typedef struct s_params
 {
-	char	**map;
-	int		i;
+	int	length;
+	int	fd;
+	int	is_error;
+}	t_params;
+
+void	skip_header(int fd)
+{
 	char	ch;
 
 	while (read(fd, &ch, 1) != 0 && ch != '\n')
 	{
 	}
+}
+
+char	**get_map(int hight, t_params t, int *is_error)
+{
+	char	**map;
+	int		i;
+
+	skip_header(t.fd);
 	map = (char **)malloc(sizeof(char *) * hight);
 	i = 0;
 	while (i < hight)
 	{
-		map[i] = (char *)malloc(sizeof(char) * (length + 1));
+		map[i] = (char *)malloc(sizeof(char) * (t.length + 1));
 		i++;
 	}
 	i = 0;
-	while (read(fd, map[i], length + 1) != 0)
+	while (read(t.fd, map[i], t.length + 1) != 0 && hight != i)
 	{
-		map[i][length] = '\0';
+		if (map[i][t.length] == '\n')
+			map[i][t.length] = '\0';
+		else
+		{
+			*is_error = 1;
+			return (map);
+		}
 		i++;
 	}
 	return (map);
@@ -68,28 +87,29 @@ int	get_map_1st_line_length(int fd)
 	return (first_line_length);
 }
 
-char	**read_file(char *file_name, char **header)
+char	**read_file(char *file_name, char **header, int *is_error)
 {
-	int		fd;
-	char	**map;
-	int		map_1st_line_length;
+	int			fd;
+	char		**map;
+	t_params	t;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
 	*header = get_header(fd);
-	map_1st_line_length = get_map_1st_line_length(fd);
+	t.length = get_map_1st_line_length(fd);
 	close(fd);
 	if (fd == -1)
 		return (NULL);
-	fd = open(file_name, O_RDONLY);
-	if (fd == -1)
+	t.fd = open(file_name, O_RDONLY);
+	if (t.fd == -1)
 		return (NULL);
-	map = get_map(fd, number_1st_line(*header), map_1st_line_length);
-	close(fd);
+	*is_error = 0;
+	map = get_map(number_1st_line(*header), t, is_error);
+	if (is_error)
+		return (map);
+	close(t.fd);
 	if (fd == -1)
 		return (NULL);
 	return (map);
 }
-
-// ОШИБКА ЕСЛИ МАР ЕРРОР
