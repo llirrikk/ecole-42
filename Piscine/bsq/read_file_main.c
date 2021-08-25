@@ -6,17 +6,16 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:43:51 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 16:28:14 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 char	*ft_realloc(char *old, char ch);
-int	first_line_checker(char *line);
+int		first_line_checker(char *line);
 int		number_1st_line(char *line);
 void	map_checker(char **map, char *fline);
 void	str_init(char **str);

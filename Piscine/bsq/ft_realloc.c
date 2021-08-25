@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 12:07:16 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 17:14:54 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 16:09:09 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_realloc(char *old, char ch)
 	}
 	new[i++] = ch;
 	new[i] = '\0';
+	free(old);
 	return (new);
 }

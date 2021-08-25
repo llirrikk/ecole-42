@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:21:41 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:06:40 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 16:26:24 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ int	ft_abs(int n)
 int	get_map_length(char **map)
 {
 	return (ft_strlen(map[0]));
+}
+
+void	map_first_line_init(char ***map, char **first_line)
+{
+	*map = NULL;
+	*first_line = NULL;
 }

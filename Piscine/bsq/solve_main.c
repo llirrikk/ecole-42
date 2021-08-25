@@ -6,17 +6,17 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:13:35 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:06:53 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 16:28:20 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> // <----------------
 
 int		number_1st_line(char *line);
-void	print_result(char **map, char *first_line, int cashmax, int *mij);
 int		get_map_length(char **map);
+void	print_result(char **map, char *first_line, int cashmax, int *mij);
 char	get_map_obstacle(char *first_line);
+void	free_cash(int **cash, int hight);
 
 int	get_min_of_3(int **cash, int i, int j)
 {
@@ -96,4 +96,5 @@ void	solver(char **map, char *first_line)
 		}
 	}
 	print_result(map, first_line, cash_max, max_index);
+	free_cash(cash, number_1st_line(first_line));
 }

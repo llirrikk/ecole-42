@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:07:52 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:10:43 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 16:08:39 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,17 @@ void	free_map(char **map, char *first_line)
 		i++;
 	}
 	free(map);
+}
+
+void	free_cash(int **cash, int hight)
+{
+	int	i;
+
+	i = 0;
+	while (i < hight)
+	{
+		free(cash[i]);
+		i++;
+	}
+	free(cash);
 }
