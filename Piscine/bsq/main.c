@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 13:10:10 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 13:05:35 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 15:57:59 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 void	read_console(char *file_name);
 char	**read_file(char *file_name, char **first_line);
-void	solver(char **map, char *first_line);
+void	ft_putstr_error(char *str);
+int		data_handle(char **map, char *first_line);
+void	ft_putchar(char c);
 
 int	main(int argc, char **argv)
 {
@@ -31,6 +33,11 @@ int	main(int argc, char **argv)
 	{
 		read_console(TEMP_FILE_NAME);
 		map = read_file(TEMP_FILE_NAME, &first_line);
+		if (map != NULL)
+		{
+			if (data_handle(map, first_line) == -1)
+				ft_putstr_error("map error\n");
+		}
 	}
 	else if (argc > 1)
 	{
@@ -38,41 +45,16 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			map = read_file(argv[i], &first_line);
+			if (map != NULL)
+			{
+				if (data_handle(map, first_line) == -1)
+					ft_putstr_error("map error\n");
+			}
+			else
+				ft_putstr_error("map error\n");
+			if (i < argc - 1)
+				ft_putchar('\n');
 			i++;
 		}
 	}
-
-
-	printf("[main] 1st line = %s\n", first_line);
-
-	// for (int i = 0; i < 10; i++)
-	// {
-	// 	for (int j = 0; j < 10; j++)
-	// 	{
-	// 		printf("%c", map[i][j]);
-	// 	}
-	// 	printf("\n");
-	// }
-
-
-	solver(map, first_line);
-
-	
-
-	// for (int i = 0; i < 3; i++)
-	// {
-	// 	for (int j = 0; j < 3; j++)
-	// 	{
-	// 		printf("(%c)", map[i][j]);
-	// 	}
-	// 	printf("\n");
-	// }
-	
-	// FREE
-	// for (int i = 0; i < 3; i++)
-	// {
-	// 	free(map[i]);
-	// }
-	// free(map);
-	// FREE
 }

@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:18:13 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/24 13:34:59 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 15:06:02 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,10 @@ void	read_console(char *file_name)
 	char	ch;
 	int		fd;
 	int		line_count;
-	//int		user_height;
 	char	*header;
 
 	str_init(&header);
 	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC);
-	// if (fd == -1)
-	// 	map_error_exit();
-
-	//user_height = 2147483647;
 	line_count = 0;
 	while (read(1, &ch, 1) != 0)
 	{
@@ -41,10 +36,7 @@ void	read_console(char *file_name)
 		{
 			line_count++;
 			if (line_count == 1)
-			{
-				//user_height = number_1st_line(header);
 				free(header);
-			}
 		}
 		write(fd, &ch, 1);
 	}

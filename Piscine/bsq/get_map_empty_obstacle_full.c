@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_exits.c                                      :+:      :+:    :+:   */
+/*   get_map_empty_obstacle_full.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/23 18:11:46 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/23 19:16:58 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/24 13:13:35 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/25 14:56:31 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+int		ft_strlen(char *str);
 
-void	ft_putstr_error(char *str);
-
-void	map_error_exit(void)
+char	get_map_empty(char *first_line)
 {
-	ft_putstr_error("map error\n");
-	exit(1);
+	return (first_line[ft_strlen(first_line) - 3]);
+}
+
+char	get_map_obstacle(char *first_line)
+{
+	return (first_line[ft_strlen(first_line) - 2]);
+}
+
+char	get_map_full(char *first_line)
+{
+	return (first_line[ft_strlen(first_line) - 1]);
 }

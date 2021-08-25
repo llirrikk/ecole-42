@@ -6,7 +6,7 @@
 #    By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/08/24 13:19:47 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/08/25 15:42:16 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,15 @@ SRC		= main.c \
 			ft_putstr_error.c \
 			is_ascii.c \
 			first_line.c \
-			error_exits.c \
 			map_checker.c \
 			read_console_main.c \
-			str_utils.c \
+			utils.c \
 			read_file_main.c \
-			solve_main.c
+			solve_main.c \
+			get_map_empty_obstacle_full.c \
+			solve_print_result.c \
+			cleans.c \
+			data_handle.c
 
 OBJ		= $(SRC:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra

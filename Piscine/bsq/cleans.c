@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_error.c                                  :+:      :+:    :+:   */
+/*   cleans.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 12:36:09 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:51:56 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/25 15:07:52 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/25 15:10:43 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar_error(char c)
-{
-	write(2, &c, 1);
-}
+int	number_1st_line(char *line);
 
-void	ft_putstr_error(char *str)
+void	free_map(char **map, char *first_line)
 {
 	int	i;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (i < number_1st_line(first_line))
 	{
-		ft_putchar_error(*(str + i));
+		free(map[i]);
 		i++;
 	}
+	free(map);
 }

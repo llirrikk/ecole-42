@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:32:48 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 12:25:00 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 15:43:51 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 #include <stdio.h>
 
 char	*ft_realloc(char *old, char ch);
-void	first_line_checker(char *line);
+int	first_line_checker(char *line);
 int		number_1st_line(char *line);
 void	map_checker(char **map, char *fline);
-void	map_error_exit(void);
 void	str_init(char **str);
 int		ft_strlen(char *str);
 
@@ -40,7 +39,7 @@ char	**get_map(int fd, int hight, int length)
 	int		i;
 	char	ch;
 
-	while (read(fd, &ch, 1) != 0 && ch != '\n') // skip header
+	while (read(fd, &ch, 1) != 0 && ch != '\n')
 	{
 	}
 	map = (char **)malloc(sizeof(char *) * hight);
@@ -53,7 +52,7 @@ char	**get_map(int fd, int hight, int length)
 	i = 0;
 	while (read(fd, map[i], length + 1) != 0)
 	{
-		map[i][length] = '\0'; // remove '\n'
+		map[i][length] = '\0';
 		i++;
 	}
 	return (map);
@@ -78,15 +77,19 @@ char	**read_file(char *file_name, char **header)
 
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		map_error_exit();
+		return (NULL);
 	*header = get_header(fd);
 	map_1st_line_length = get_map_1st_line_length(fd);
 	close(fd);
+	if (fd == -1)
+		return (NULL);
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		map_error_exit();
+		return (NULL);
 	map = get_map(fd, number_1st_line(*header), map_1st_line_length);
 	close(fd);
+	if (fd == -1)
+		return (NULL);
 	return (map);
 }
 

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_error.c                                  :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 12:36:09 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:51:56 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/08/23 19:21:41 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/08/25 15:06:40 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar_error(char c)
+int		ft_strlen(char *str);
+
+void	str_init(char **str)
 {
-	write(2, &c, 1);
+	*str = malloc(sizeof(char));
+	*str[0] = '\0';
 }
 
-void	ft_putstr_error(char *str)
+int	ft_abs(int n)
 {
-	int	i;
+	if (n > 0)
+		return (n);
+	return (n * (-1));
+}
 
-	i = 0;
-	while (*(str + i) != '\0')
-	{
-		ft_putchar_error(*(str + i));
-		i++;
-	}
+int	get_map_length(char **map)
+{
+	return (ft_strlen(map[0]));
 }
