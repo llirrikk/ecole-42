@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 19:18:13 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/08/25 15:06:02 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/08/25 19:23:21 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	read_console(char *file_name)
 	char	*header;
 
 	str_init(&header);
-	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC);
+	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	line_count = 0;
 	while (read(1, &ch, 1) != 0)
 	{
