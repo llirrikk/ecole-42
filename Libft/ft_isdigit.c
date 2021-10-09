@@ -6,11 +6,11 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 22:20:03 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/05 22:21:36 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/07 15:59:42 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

@@ -6,7 +6,7 @@
 #    By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/10/06 23:46:24 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/10/07 15:52:23 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,3 +59,8 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+# https://github.com/alelievr/libft-unit-test
+so:			$(OBJ)
+			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+			gcc -nostartfiles -shared -o libft.so $(OBJ)

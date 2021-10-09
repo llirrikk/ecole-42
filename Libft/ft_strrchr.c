@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 21:19:26 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/06 21:27:23 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/07 19:56:19 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			res = ptr;
 		ptr++;
 	}
+	if (*ptr == '\0' && c == '\0')
+		return (ptr);
 	return (res);
 }

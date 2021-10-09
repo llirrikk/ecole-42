@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:19:17 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/06 19:39:34 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/07 15:56:32 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*s;
 	size_t		i;
 
+	if (!dest && !src)
+		return (dest);
 	s = (const char *)src;
 	d = (char *)dest;
 	if (s > d)
@@ -31,11 +33,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		while (n)
-		{
-			d[n - 1] = s[n - 1];
-			n--;
-		}
+		while (n--)
+			d[n] = s[n];
 	}
 	return (dest);
 }

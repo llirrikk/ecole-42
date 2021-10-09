@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 20:41:21 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/06 23:16:19 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/09 19:14:23 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (size == 0)
 		return (len);
 	i = 0;
+	j = 0;
 	while (dst[i])
 		i++;
 	while (src[j] && i + 1 < size)

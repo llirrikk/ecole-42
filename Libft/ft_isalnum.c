@@ -6,14 +6,14 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 22:30:32 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/05 23:08:05 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/07 16:23:07 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c);
-int	ft_isdigit(char c);
-
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }
