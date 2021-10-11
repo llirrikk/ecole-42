@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 13:53:21 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/09 20:05:09 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:49:45 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	sign_detection(int *sign, char str)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	size_t	res;
 	int		sign;
