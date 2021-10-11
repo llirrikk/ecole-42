@@ -6,7 +6,7 @@
 #    By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/10/07 15:52:23 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/10/11 16:26:52 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,18 @@ SRC		= ft_atoi.c \
 			ft_strnstr.c \
 			ft_strrchr.c \
 			ft_tolower.c \
-			ft_toupper.c
+			ft_toupper.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_strtrim.c \
+			ft_split.c \
+			ft_itoa.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c
 
 OBJ		= $(SRC:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra
