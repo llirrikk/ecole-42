@@ -6,12 +6,13 @@
 #    By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/10/11 16:26:52 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/10/11 22:46:54 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
 NAME	= libft.a
+HEADER	= libft.h
 SRC		= ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
@@ -46,32 +47,44 @@ SRC		= ft_atoi.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c
+		
+B_SRC	= ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
+
+B_OBJ	= $(B_SRC:.c=.o)
 
 OBJ		= $(SRC:.c=.o)
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -I.$(HEADER)
 RM		= rm -f
 AR  	= ar -rcs
 
-.PHONY:		all clean fclean re
-
 all:		$(NAME)
 
-# $(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-$(NAME):	$(OBJ)
-			$(AR) $(NAME) $(OBJ)
+$(NAME):	$(OBJ) $(HEADER)
+			$(AR) $(NAME) $(OBJ) $(HEADER)
 
 %.o:		%.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJ)
+			$(RM) $(OBJ) $(B_OBJ)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
 
-# https://github.com/alelievr/libft-unit-test
-so:			$(OBJ)
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-			gcc -nostartfiles -shared -o libft.so $(OBJ)
+bonus:		$(OBJ) $(B_OBJ) $(HEADER)
+			$(AR) $(NAME) $(B_OBJ) $(OBJ) $(HEADER)
+
+# so:
+# 			gcc -shared -o libft.so *.o
+
+.PHONY:		all clean fclean re bonus
