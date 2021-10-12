@@ -1,0 +1,296 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+oa-i4.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Wed Aug 11 12:37:26 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-bf48b980-2f63-450f-abb4-6e29eb9a55dc-3705567
+
+= Git history ==================================================================
+$> git -C /tmp/tmp98kZW6/user log --pretty='%H - %an, %ad : %s'
+82e0cb5ce0a5efc1e276b3a7f5b070d4489cfdef - Silvia Serwyn, Tue Aug 10 19:40:40 2021 +0300 : edited 'ex05'
+ca6fa976d5603418dfc12582eb288ea5108ace85 - Silvia Serwyn, Tue Aug 10 19:19:22 2021 +0300 : edited 'c04'
+26d1cb4806d03e5206603f09c9bc3c2430ec276b - Silvia Serwyn, Tue Aug 10 13:38:49 2021 +0300 : ex05 doesn't work
+762594ae9241b3d53db730857b85363e1f1c7e6f - Silvia Serwyn, Mon Aug 9 19:41:44 2021 +0300 : 1st
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmp98kZW6/user
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel  1654 Aug 11 12:37 __GIT_HISTORY
+drwxr-xr-x  4 root  wheel   128 Aug 11 12:37 ex00
+drwxr-xr-x  4 root  wheel   128 Aug 11 12:37 ex01
+drwxr-xr-x  4 root  wheel   128 Aug 11 12:37 ex02
+drwxr-xr-x  4 root  wheel   128 Aug 11 12:37 ex03
+drwxr-xr-x  4 root  wheel   128 Aug 11 12:37 ex04
+drwxr-xr-x  3 root  wheel    96 Aug 11 12:37 ex05
+
+/tmp/tmp98kZW6/user/ex00:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel   986 Aug 11 12:37 ft_strlen.c
+
+/tmp/tmp98kZW6/user/ex01:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel  1074 Aug 11 12:37 ft_putstr.c
+
+/tmp/tmp98kZW6/user/ex02:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel  1512 Aug 11 12:37 ft_putnbr.c
+
+/tmp/tmp98kZW6/user/ex03:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel  1887 Aug 11 12:37 ft_atoi.c
+
+/tmp/tmp98kZW6/user/ex04:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 11 12:37 .DS_Store
+-rw-r--r--  1 root  wheel  2506 Aug 11 12:37 ft_putnbr_base.c
+
+/tmp/tmp98kZW6/user/ex05:
+total 8
+-rw-r--r--  1 root  wheel  2579 Aug 11 12:37 ft_atoi_base.c
+ 
+= ex00 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_strlen.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_strlen.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./mxp6k4oq8f75jztbwoxw2ef9
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 15
+
+= ex01 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_putstr.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror test_ft_putstr.c ft_putstr.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./t2rh5pcvbgud95zw4tv60gin
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 15
+
+= ex02 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_putnbr.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_putnbr.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./mva9w0eqtbny50k3ktjxxoc6
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 20
+
+= ex03 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_atoi.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_atoi.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./l0a5nr0o9p5nra5usvlxnsyi
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 20
+
+= ex04 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_putnbr_base.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_putnbr_base.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./o1rez0tibbds3ot4snhbt5w8
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1   2021-08-11 09:37:37.000000000 +0000$
++++ test1.output  2021-08-11 09:37:36.000000000 +0000$
+@@ -1,8 +1,8 @@$
+-$
++-5478773672$
+ -2147483647$
+ 19999999999$
+-$
+-$
++ai$
++ag$
+ -20$
+ 2A$
+ 0$
+@@ -11,22 +11,22 @@$
+ -101010$
+ $
+ $
+-$
+-$
++Ai$
++c$
+ -lF$
+-$
+-$
+-$
+-$
++-s$
++v$
++x$
++mx$
+ O$
+-$
+-$
+-$
+-$
+-$
+-$
+-$
+-$
++-RW$
++-OD$
++-y$
++lX$
++-B$
++Xl$
++j$
++aq$
+ -Ll$
+-$
+-$
++-MN$
++-m$
+
+Diff KO :(
+Grade: 0
+
+= ex05 =========================================================================
+$> /usr/bin/norminette -R CheckForbiddenSourceHeader ft_atoi_base.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_atoi_base.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./qq322yywdj3yf1k3hfvsiuea
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1   2021-08-11 09:37:38.000000000 +0000$
++++ test1.output  2021-08-11 09:37:37.000000000 +0000$
+@@ -1,50 +1,50 @@$
+-5434338$
+-5434338$
+-1518098377$
+-10403681$
+-566$
+-567$
+-569$
+-3697869$
+-569$
+-569$
+-570$
+-558$
+-555$
+-556$
+-5415$
+-5715$
+-663652$
+-0$
+-562$
+-553$
++42$
++21$
++42$
++14754629$
++43$
++-44$
++-46$
+ 0$
++-46$
++46$
++47$
++29$
++-26$
++27$
++1$
++4$
++8$
+ 0$
+ 0$
+-629$
+-629$
+-54328$
+-533350$
+-533350$
+-533350$
+-533350$
+-533350$
+-1944721352$
+-98411427$
+-11960739$
+--325804119$
+-805544095$
+-837437686$
+-136923210$
+-1190550091$
+-772121248$
+-95231$
+-799148359$
+--413689847$
+--1106492933$
+--2073471682$
+--1815773979$
+--1376886641$
+--850026302$
+-8809$
+--818020426$
++0$
++0$
++0$
++0$
++0$
++0$
++-4096$
++-15$
++0$
++0$
++0$
++0$
++0$
++0$
++192$
++234$
++2$
++20$
++0$
++0$
++0$
++0$
++1049$
++9$
++0$
++0$
++0$
++0$
++0$
++24$
++10$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 70 ==============================================================

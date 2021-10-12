@@ -1,0 +1,147 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+ga-n6.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Thu Aug  5 13:39:41 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-0dde47c0-5a87-485e-8382-6d6d66d365ea-3694329
+
+= Git history ==================================================================
+$> git -C /tmp/tmpFuNb7T/user log --pretty='%H - %an, %ad : %s'
+729cc0914798e036acec2990ac25cbdc9336c17d - Silvia Serwyn, Wed Aug 4 11:13:22 2021 +0300 : 3rd
+147d52250167dce402d8b603ca963186ce9671d8 - Silvia Serwyn, Tue Aug 3 20:54:10 2021 +0300 : 2nd
+6a75c82b1e78d318b2b5f51d91a5b350fb50a965 - Silvia Serwyn, Tue Aug 3 20:51:11 2021 +0300 : 2nd
+e3aa73b349a062ac46dcafefd2900e144a8a81d9 - Silvia Serwyn, Tue Aug 3 20:48:31 2021 +0300 : 1st
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmpFuNb7T/user
+total 32
+-rw-r--r--  1 root  wheel  8196 Aug  5 13:39 .DS_Store
+-rw-r--r--  1 root  wheel  1258 Aug  5 13:39 __GIT_HISTORY
+drwxr-xr-x  3 root  wheel    96 Aug  5 13:39 ex01
+drwxr-xr-x  4 root  wheel   128 Aug  5 13:39 ex02
+drwxr-xr-x  4 root  wheel   128 Aug  5 13:39 ex03
+drwxr-xr-x  3 root  wheel    96 Aug  5 13:39 ex04
+drwxr-xr-x  4 root  wheel   128 Aug  5 13:39 ex05
+drwxr-xr-x  3 root  wheel    96 Aug  5 13:39 ex06
+
+/tmp/tmpFuNb7T/user/ex01:
+total 8
+-rwxr-xr-x  1 root  wheel  52 Aug  5 13:39 print_groups.sh
+
+/tmp/tmpFuNb7T/user/ex02:
+total 32
+-rw-r--r--  1 root  wheel  8196 Aug  5 13:39 .DS_Store
+-rwxr-xr-x  1 root  wheel    83 Aug  5 13:39 find_sh.sh
+
+/tmp/tmpFuNb7T/user/ex03:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug  5 13:39 .DS_Store
+-rwxr-xr-x  1 root  wheel    62 Aug  5 13:39 count_files.sh
+
+/tmp/tmpFuNb7T/user/ex04:
+total 8
+-rwxr-xr-x  1 root  wheel  112 Aug  5 13:39 MAC.sh
+
+/tmp/tmpFuNb7T/user/ex05:
+total 24
+-rw-r--r--  1 root  wheel     2 Aug  5 13:39 "\?$*'MaRViN'*$?\"
+-rw-r--r--  1 root  wheel  6148 Aug  5 13:39 .DS_Store
+
+/tmp/tmpFuNb7T/user/ex06:
+total 8
+-rwxr-xr-x  1 root  wheel  36 Aug  5 13:39 skip.sh
+ 
+= ex01 =========================================================================
+===========
+testing
+nobody,everyone,localaccounts,_lpoperator
+VS
+nobody,everyone,localaccounts,_lpoperator
+===========
+< le notre, > le votre
+groups: noob: no such user
+id: noob: no such user
+===========
+testing
+
+VS
+
+===========
+< our file, > your file
+ok
+
+Grade: 10
+
+= ex02 =========================================================================
+< our file, > your file
+ok
+
+Grade: 10
+
+= ex03 =========================================================================
+< our file, > your file
+ok
+
+Grade: 10
+
+= ex04 =========================================================================
+===========
+testing
+14:20:5e:0b:8f:9a
+06:20:5e:0b:8f:9a
+12:4c:19:d1:7e:e4
+78:7b:8a:df:73:53
+4e:00:f4:42:d6:00
+4e:00:f4:42:d6:01
+4e:00:f4:42:d6:00
+
+VS
+14:20:5e:0b:8f:9a
+06:20:5e:0b:8f:9a
+12:4c:19:d1:7e:e4
+78:7b:8a:df:73:53
+4e:00:f4:42:d6:00
+4e:00:f4:42:d6:01
+4e:00:f4:42:d6:00
+
+===========
+< le notre, > le votre
+ok
+
+Grade: 10
+
+= ex05 =========================================================================
+-rw-r--r--  1 deepthought  deepthought  2 Aug  5 10:39 "\?$*'MaRViN'*$?\"
+OK
+
+Grade: 15
+
+= ex06 =========================================================================
+ok
+
+Grade: 15
+
+= ex07 =========================================================================
+Nothing turned in
+Grade: 0
+
+= ex08 =========================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 70 ==============================================================

@@ -1,0 +1,162 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+oa-o4.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Thu Aug 26 14:46:05 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-17a44f9c-823c-4f9f-a0cc-c92c704c1c33-3736305
+
+= Git history ==================================================================
+$> git -C /tmp/tmp02yNyH/user log --pretty='%H - %an, %ad : %s'
+b9f2b5025ac1f5b480f2aa982a24b4e403794774 - Silvia Serwyn, Wed Aug 25 19:26:22 2021 +0300 : lol 2
+b83b5c766d398fdd742a65ce84372e33ba667f08 - Silvia Serwyn, Wed Aug 25 19:17:38 2021 +0300 : lol
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmp02yNyH/user
+total 160
+-rw-r--r--  1 root  wheel  6148 Aug 26 14:46 .DS_Store
+-rw-r--r--  1 root  wheel  1506 Aug 26 14:46 Makefile
+-rw-r--r--  1 root  wheel  1447 Aug 26 14:46 __GIT_HISTORY
+-rw-r--r--  1 root  wheel  1522 Aug 26 14:46 cleans.c
+-rw-r--r--  1 root  wheel  1330 Aug 26 14:46 data_handle.c
+-rw-r--r--  1 root  wheel  2258 Aug 26 14:46 first_line.c
+-rw-r--r--  1 root  wheel  1074 Aug 26 14:46 ft_putstr.c
+-rw-r--r--  1 root  wheel  1092 Aug 26 14:46 ft_putstr_error.c
+-rw-r--r--  1 root  wheel  1182 Aug 26 14:46 ft_realloc.c
+-rw-r--r--  1 root  wheel   986 Aug 26 14:46 ft_strlen.c
+-rw-r--r--  1 root  wheel  1194 Aug 26 14:46 get_map_empty_obstacle_full.c
+-rw-r--r--  1 root  wheel  1100 Aug 26 14:46 is_ascii.c
+-rw-r--r--  1 root  wheel  2419 Aug 26 14:46 main.c
+-rw-r--r--  1 root  wheel  2481 Aug 26 14:46 map_checker.c
+-rw-r--r--  1 root  wheel  1467 Aug 26 14:46 read_console_main.c
+-rw-r--r--  1 root  wheel  2817 Aug 26 14:46 read_file_main.c
+-rw-r--r--  1 root  wheel  2730 Aug 26 14:46 solve_main.c
+-rw-r--r--  1 root  wheel  1788 Aug 26 14:46 solve_print_result.c
+-rw-r--r--  1 root  wheel  1249 Aug 26 14:46 utils.c
+ 
+= basic_tests ==================================================================
+$> /usr/bin/norminette  is_ascii.c get_map_empty_obstacle_full.c ft_strlen.c first_line.c main.c map_checker.c utils.c ft_realloc.c solve_main.c solve_print_result.c ft_putstr.c data_handle.c cleans.c read_console_main.c read_file_main.c ft_putstr_error.c | grep -E '^(Error|Warning)'
+
+$> make clean && make && make fclean && make && make clean && ls -la bsq
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+gcc -Wall -Werror -Wextra -c main.c -o main.o
+gcc -Wall -Werror -Wextra -c ft_realloc.c -o ft_realloc.o
+gcc -Wall -Werror -Wextra -c ft_putstr.c -o ft_putstr.o
+gcc -Wall -Werror -Wextra -c ft_strlen.c -o ft_strlen.o
+gcc -Wall -Werror -Wextra -c ft_putstr_error.c -o ft_putstr_error.o
+gcc -Wall -Werror -Wextra -c is_ascii.c -o is_ascii.o
+gcc -Wall -Werror -Wextra -c first_line.c -o first_line.o
+gcc -Wall -Werror -Wextra -c map_checker.c -o map_checker.o
+gcc -Wall -Werror -Wextra -c read_console_main.c -o read_console_main.o
+gcc -Wall -Werror -Wextra -c utils.c -o utils.o
+gcc -Wall -Werror -Wextra -c read_file_main.c -o read_file_main.o
+gcc -Wall -Werror -Wextra -c solve_main.c -o solve_main.o
+gcc -Wall -Werror -Wextra -c get_map_empty_obstacle_full.c -o get_map_empty_obstacle_full.o
+gcc -Wall -Werror -Wextra -c solve_print_result.c -o solve_print_result.o
+gcc -Wall -Werror -Wextra -c cleans.c -o cleans.o
+gcc -Wall -Werror -Wextra -c data_handle.c -o data_handle.o
+gcc -Wall -Werror -Wextra -o bsq main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f bsq
+gcc -Wall -Werror -Wextra -c main.c -o main.o
+gcc -Wall -Werror -Wextra -c ft_realloc.c -o ft_realloc.o
+gcc -Wall -Werror -Wextra -c ft_putstr.c -o ft_putstr.o
+gcc -Wall -Werror -Wextra -c ft_strlen.c -o ft_strlen.o
+gcc -Wall -Werror -Wextra -c ft_putstr_error.c -o ft_putstr_error.o
+gcc -Wall -Werror -Wextra -c is_ascii.c -o is_ascii.o
+gcc -Wall -Werror -Wextra -c first_line.c -o first_line.o
+gcc -Wall -Werror -Wextra -c map_checker.c -o map_checker.o
+gcc -Wall -Werror -Wextra -c read_console_main.c -o read_console_main.o
+gcc -Wall -Werror -Wextra -c utils.c -o utils.o
+gcc -Wall -Werror -Wextra -c read_file_main.c -o read_file_main.o
+gcc -Wall -Werror -Wextra -c solve_main.c -o solve_main.o
+gcc -Wall -Werror -Wextra -c get_map_empty_obstacle_full.c -o get_map_empty_obstacle_full.o
+gcc -Wall -Werror -Wextra -c solve_print_result.c -o solve_print_result.o
+gcc -Wall -Werror -Wextra -c cleans.c -o cleans.o
+gcc -Wall -Werror -Wextra -c data_handle.c -o data_handle.o
+gcc -Wall -Werror -Wextra -o bsq main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+-rwxr-xr-x  1 deepthought  deepthought  15004 Aug 26 11:46 bsq
+
+Testing one parameter
+$> ./ref_bsq testbasic1
+$> ./bsq testbasic1
+$> diff -U 3 user_output ref_output | cat -e
+
+Diff OK :D
+Testing two parameters
+$> ./ref_bsq testbasic1 testbasic2
+$> ./bsq testbasic1 testbasic2
+$> diff -U 3 user_output ref_output | cat -e
+
+Diff OK :D
+Testing standard input
+$> ./ref_bsq < testbasic1
+$> ./bsq < testbasic1
+Command './bsq < testbasic1' timed out after 10 seconds
+Grade: 0
+
+= functional_tests =============================================================
+$> /usr/bin/norminette  is_ascii.c get_map_empty_obstacle_full.c ft_strlen.c first_line.c main.c map_checker.c utils.c ft_realloc.c solve_main.c solve_print_result.c ft_putstr.c data_handle.c cleans.c read_console_main.c read_file_main.c ft_putstr_error.c | grep -E '^(Error|Warning)'
+
+$> make clean && make && make fclean && make && make clean && ls -la bsq
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+gcc -Wall -Werror -Wextra -c main.c -o main.o
+gcc -Wall -Werror -Wextra -c ft_realloc.c -o ft_realloc.o
+gcc -Wall -Werror -Wextra -c ft_putstr.c -o ft_putstr.o
+gcc -Wall -Werror -Wextra -c ft_strlen.c -o ft_strlen.o
+gcc -Wall -Werror -Wextra -c ft_putstr_error.c -o ft_putstr_error.o
+gcc -Wall -Werror -Wextra -c is_ascii.c -o is_ascii.o
+gcc -Wall -Werror -Wextra -c first_line.c -o first_line.o
+gcc -Wall -Werror -Wextra -c map_checker.c -o map_checker.o
+gcc -Wall -Werror -Wextra -c read_console_main.c -o read_console_main.o
+gcc -Wall -Werror -Wextra -c utils.c -o utils.o
+gcc -Wall -Werror -Wextra -c read_file_main.c -o read_file_main.o
+gcc -Wall -Werror -Wextra -c solve_main.c -o solve_main.o
+gcc -Wall -Werror -Wextra -c get_map_empty_obstacle_full.c -o get_map_empty_obstacle_full.o
+gcc -Wall -Werror -Wextra -c solve_print_result.c -o solve_print_result.o
+gcc -Wall -Werror -Wextra -c cleans.c -o cleans.o
+gcc -Wall -Werror -Wextra -c data_handle.c -o data_handle.o
+gcc -Wall -Werror -Wextra -o bsq main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f bsq
+gcc -Wall -Werror -Wextra -c main.c -o main.o
+gcc -Wall -Werror -Wextra -c ft_realloc.c -o ft_realloc.o
+gcc -Wall -Werror -Wextra -c ft_putstr.c -o ft_putstr.o
+gcc -Wall -Werror -Wextra -c ft_strlen.c -o ft_strlen.o
+gcc -Wall -Werror -Wextra -c ft_putstr_error.c -o ft_putstr_error.o
+gcc -Wall -Werror -Wextra -c is_ascii.c -o is_ascii.o
+gcc -Wall -Werror -Wextra -c first_line.c -o first_line.o
+gcc -Wall -Werror -Wextra -c map_checker.c -o map_checker.o
+gcc -Wall -Werror -Wextra -c read_console_main.c -o read_console_main.o
+gcc -Wall -Werror -Wextra -c utils.c -o utils.o
+gcc -Wall -Werror -Wextra -c read_file_main.c -o read_file_main.o
+gcc -Wall -Werror -Wextra -c solve_main.c -o solve_main.o
+gcc -Wall -Werror -Wextra -c get_map_empty_obstacle_full.c -o get_map_empty_obstacle_full.o
+gcc -Wall -Werror -Wextra -c solve_print_result.c -o solve_print_result.o
+gcc -Wall -Werror -Wextra -c cleans.c -o cleans.o
+gcc -Wall -Werror -Wextra -c data_handle.c -o data_handle.o
+gcc -Wall -Werror -Wextra -o bsq main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+rm -f main.o ft_realloc.o ft_putstr.o ft_strlen.o ft_putstr_error.o is_ascii.o first_line.o map_checker.o read_console_main.o utils.o read_file_main.o solve_main.o get_map_empty_obstacle_full.o solve_print_result.o cleans.o data_handle.o
+-rwxr-xr-x  1 deepthought  deepthought  15004 Aug 26 11:46 bsq
+
+= Test 1 ===================================================
+$> ./992vtewvrkaybtlwql6nhq5c < test1.stdin
+Command './992vtewvrkaybtlwql6nhq5c < test1.stdin' timed out after 10 seconds
+Grade: 0
+
+= Final grade: 0 ===============================================================

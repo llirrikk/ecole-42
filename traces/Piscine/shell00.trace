@@ -1,0 +1,151 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+ga-q4.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Mon Aug 16 18:06:34 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-fff38175-b8c2-49ab-babe-a4adff841e4c-3725357
+
+= Git history ==================================================================
+$> git -C /tmp/tmpC8gJrX/user log --pretty='%H - %an, %ad : %s'
+1da00648b95c7c330d149b0fedef6f462532ed60 - Silvia Serwyn, Mon Aug 16 16:53:20 2021 +0300 : first
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmpC8gJrX/user
+total 8
+-rw-r--r--  1 root  wheel  503 Aug 16 18:06 __GIT_HISTORY
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex00
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex01
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex02
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex03
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex04
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex05
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex06
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex07
+drwxr-xr-x  3 root  wheel   96 Aug 16 18:06 ex08
+
+/tmp/tmpC8gJrX/user/ex00:
+total 8
+-rw-r--r--  1 root  wheel  2 Aug 16 18:06 z
+
+/tmp/tmpC8gJrX/user/ex01:
+total 8
+-rw-r--r--  1 root  wheel  2048 Aug 16 18:06 testShell00.tar
+
+/tmp/tmpC8gJrX/user/ex02:
+total 16
+-rw-r--r--  1 root  wheel  6144 Aug 16 18:06 exo2.tar
+
+/tmp/tmpC8gJrX/user/ex03:
+total 8
+-rw-r--r--  1 root  wheel  215 Aug 16 18:06 klist.txt
+
+/tmp/tmpC8gJrX/user/ex04:
+total 8
+-rw-r--r--  1 root  wheel  9 Aug 16 18:06 midLS
+
+/tmp/tmpC8gJrX/user/ex05:
+total 8
+-rwxr-xr-x  1 root  wheel  37 Aug 16 18:06 git_commit.sh
+
+/tmp/tmpC8gJrX/user/ex06:
+total 8
+-rwxr-xr-x  1 root  wheel  61 Aug 16 18:06 git_ignore.sh
+
+/tmp/tmpC8gJrX/user/ex07:
+total 8
+-rw-r--r--  1 root  wheel  538 Aug 16 18:06 b
+
+/tmp/tmpC8gJrX/user/ex08:
+total 8
+-rw-r--r--  1 root  wheel  131 Aug 16 18:06 clean
+ 
+= ex00 =========================================================================
+$> diff -U 3 z ref_output | cat -e
+
+Diff OK :D
+Grade: 5
+
+= ex01 =========================================================================
+Grade: 5
+
+= ex02 =========================================================================
+Grade: 10
+
+= ex03 =========================================================================
+Grade: 10
+
+= ex04 =========================================================================
+$> sh ./test_midls.sh
+./test_midls.sh: line 4: sleep: command not found
+./test_midls.sh: line 6: sleep: command not found
+./test_midls.sh: line 8: sleep: command not found
+./test_midls.sh: line 10: sleep: command not found
+./test_midls.sh: line 12: sleep: command not found
+./test_midls.sh: line 14: sleep: command not found
+./test_midls.sh: line 16: sleep: command not found
+./test_midls.sh: line 18: sleep: command not found
+./test_midls.sh: line 20: sleep: command not found
+./test_midls.sh: line 29: sleep: command not found
+< our file, > your file
+ok
+
+Grade: 10
+
+= ex05 =========================================================================
+$> diff -U 3 user_output test_output | cat -e
+
+Diff OK :D
+OK
+Grade: 10
+
+= ex06 =========================================================================
+$> diff -U 3 user_output test_output | cat -e
+
+Diff OK :D
+OK
+Grade: 10
+
+= ex07 =========================================================================
+$> diff -U 3 b 42b | cat -e
+
+Diff OK :D
+Grade: 10
+
+= ex08 =========================================================================
+$> sh ./test_clean.sh
+./test/.7~
+./test/test/#2#
+./test/test/titi/4~
+./test/test/titi/#4#
+./test/test/2~
+./test/#1#
+./test/#et#
+./test/titi/3~
+./test/titi/test/#5#
+./test/titi/test/5~
+./test/titi/#3#
+./test/1~
+ok
+
+Grade: 15
+
+= ex09 =========================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 85 ==============================================================

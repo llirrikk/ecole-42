@@ -1,0 +1,715 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+vo-l2.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Fri Aug 20 19:58:08 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-0b9c41ab-59fe-46b5-bf2c-bf646744edee-3722001
+
+= Git history ==================================================================
+$> git -C /tmp/tmpUt4Dul/user log --pretty='%H - %an, %ad : %s'
+9bff775907dc34f84b3b3e6ac8b2794a887e0b24 - Silvia Serwyn, Thu Aug 19 18:04:59 2021 +0300 : 2nd
+17e14401d02989ff6c1040ed618a0e9721302b3a - Silvia Serwyn, Thu Aug 19 17:08:02 2021 +0300 : 1st
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmpUt4Dul/user
+total 8
+-rw-r--r--  1 root  wheel  2207 Aug 20 19:58 __GIT_HISTORY
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex00
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex01
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex02
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex03
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex04
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex05
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex06
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex07
+drwxr-xr-x  3 root  wheel    96 Aug 20 19:58 ex08
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex09
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex10
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex11
+drwxr-xr-x  4 root  wheel   128 Aug 20 19:58 ex12
+
+/tmp/tmpUt4Dul/user/ex00:
+total 16
+-rw-r--r--  1 root  wheel  1153 Aug 20 19:58 ft_create_elem.c
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+
+/tmp/tmpUt4Dul/user/ex01:
+total 16
+-rw-r--r--  1 root  wheel  1068 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1237 Aug 20 19:58 ft_list_push_front.c
+
+/tmp/tmpUt4Dul/user/ex02:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1063 Aug 20 19:58 ft_list_size.c
+
+/tmp/tmpUt4Dul/user/ex03:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1094 Aug 20 19:58 ft_list_last.c
+
+/tmp/tmpUt4Dul/user/ex04:
+total 16
+-rw-r--r--  1 root  wheel  1068 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1160 Aug 20 19:58 ft_list_push_back.c
+
+/tmp/tmpUt4Dul/user/ex05:
+total 16
+-rw-r--r--  1 root  wheel  1068 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1375 Aug 20 19:58 ft_list_push_strs.c
+
+/tmp/tmpUt4Dul/user/ex06:
+total 16
+-rw-r--r--  1 root  wheel  1031 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1287 Aug 20 19:58 ft_list_clear.c
+
+/tmp/tmpUt4Dul/user/ex07:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1116 Aug 20 19:58 ft_list_at.c
+
+/tmp/tmpUt4Dul/user/ex08:
+total 8
+-rw-r--r--  1 root  wheel  1199 Aug 20 19:58 ft_list_reverse.c
+
+/tmp/tmpUt4Dul/user/ex09:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1106 Aug 20 19:58 ft_list_foreach.c
+
+/tmp/tmpUt4Dul/user/ex10:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1217 Aug 20 19:58 ft_list_foreach_if.c
+
+/tmp/tmpUt4Dul/user/ex11:
+total 16
+-rw-r--r--  1 root  wheel  1009 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1181 Aug 20 19:58 ft_list_find.c
+
+/tmp/tmpUt4Dul/user/ex12:
+total 16
+-rw-r--r--  1 root  wheel  1031 Aug 20 19:58 ft_list.h
+-rw-r--r--  1 root  wheel  1433 Aug 20 19:58 ft_list_remove_if.c
+ 
+= ex00 =========================================================================
+$> /usr/bin/norminette  ft_list.h ft_create_elem.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./31og5io7qjjgd4sov671jiew "t5fqmbLx" "MyaJgZ" "x9bqc" "h0MtvmTnrV7Q" "Zk5BSj78rI" "B1WlJjc0CV4" "9kgVC1oJc" "hg" "1Ji" "V4ToM9yN37Y" "7HzCiachr" "zTS1nBXjV" "Ga" "hWUBf" "eXEkloQ" "zY95VNkUMO" "Suo" "UJo" "XpLb" "1LBFIvlb20" "dgIXHnRuoktQ" "NULL" ""
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 5
+
+= ex01 =========================================================================
+$> /usr/bin/norminette  ft_list_push_front.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_list_push_front.c ft_create_elem.c main.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror ft_list_push_front.c ft_create_elem.c main.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./x7wl511mc0powj84nzhl6c14 "wBnvVTCl" "6Xf" "LBNhly6OXGZ" "hInj" "VqW" "eA" "nwKescC976b" "ldt7DWQRxLw" "FWQB3Y" "vkHNKOusBfy" "m6CXMZL" "2JhK7nmGOD" "NULL" ""
+$> ./x7wl511mc0powj84nzhl6c14 "wBnvVTCl" "6Xf" "LBNhly6OXGZ" "hInj" "VqW" "eA" "nwKescC976b" "ldt7DWQRxLw" "FWQB3Y" "vkHNKOusBfy" "m6CXMZL" "2JhK7nmGOD" "NULL" ""
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex02 =========================================================================
+$> /usr/bin/norminette  ft_list_size.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_list_size.c main.c ft_create_elem.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror ft_list_size.c main.c ft_create_elem.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./55w0v2bide15t3z7zaeguai9 
+$> ./55w0v2bide15t3z7zaeguai9 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./3wzvm23p4ztppp9qnqmgd4pl "JuXPbUO5h4BMoIkal"
+$> ./3wzvm23p4ztppp9qnqmgd4pl "JuXPbUO5h4BMoIkal"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./r4buhoevb4aqrapzfsrgvqlr "NULL"
+$> ./r4buhoevb4aqrapzfsrgvqlr "NULL"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./cvv1c099yohnxjhzvsl1gj9u "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL"
+$> ./cvv1c099yohnxjhzvsl1gj9u "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./if32vxpg8nx7mz6as8e0tr6h "YVPz3h" "NULL" "UN0c8Shw" "IFlEH"
+$> ./if32vxpg8nx7mz6as8e0tr6h "YVPz3h" "NULL" "UN0c8Shw" "IFlEH"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./ht6f24w35ik0f1cpiaesupqc "NULL" "tdVRe" "NULL" "JIKxPUgrmHTE" "NULL" "NULL" "NULL"
+$> ./ht6f24w35ik0f1cpiaesupqc "NULL" "tdVRe" "NULL" "JIKxPUgrmHTE" "NULL" "NULL" "NULL"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./xr8a1dcj2xfjzykxah0p0h4f "S0fane28pt" "NULL" "NULL" "sf8RojK" "NULL"
+$> ./xr8a1dcj2xfjzykxah0p0h4f "S0fane28pt" "NULL" "NULL" "sf8RojK" "NULL"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./u1z2m5qduf0r1hyqolkt0nqs "USdOPGaTq7fR" "JTfhG9yrsL" "NULL" "NULL" "NULL" "NULL"
+$> ./u1z2m5qduf0r1hyqolkt0nqs "USdOPGaTq7fR" "JTfhG9yrsL" "NULL" "NULL" "NULL" "NULL"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./naat19nb2x7hj4v9d3zwmrlj "Kt" "uKLj" "pKf3" "NULL" "NULL" "FVHvntGIZq" "3HY8Z7ESWMl" "NULL" "B80CX" "0" "NULL" "MDZHpQIdm071" "8x2iX3HjJQwe"
+$> ./naat19nb2x7hj4v9d3zwmrlj "Kt" "uKLj" "pKf3" "NULL" "NULL" "FVHvntGIZq" "3HY8Z7ESWMl" "NULL" "B80CX" "0" "NULL" "MDZHpQIdm071" "8x2iX3HjJQwe"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex03 =========================================================================
+$> /usr/bin/norminette  ft_list.h ft_list_last.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_last.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_last.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./6ggh4hqviry6db7ybpq487cl "AxDU7KWHReQY"
+$> ./6ggh4hqviry6db7ybpq487cl "AxDU7KWHReQY"
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./lshbwiy04on2hoovyfifr8xs "NULL"
+$> ./lshbwiy04on2hoovyfifr8xs "NULL"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./95c4k9jyjrjfparpsi88p62j "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL"
+$> ./95c4k9jyjrjfparpsi88p62j "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL" "NULL"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./jbzhyyni71c4ym6xhwnf1jur "NULL" "lAxd" "NULL" "NULL" "NULL" "NULL" "OL6kpFn3ay2" "NULL" "NULL"
+$> ./jbzhyyni71c4ym6xhwnf1jur "NULL" "lAxd" "NULL" "NULL" "NULL" "NULL" "OL6kpFn3ay2" "NULL" "NULL"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./xo0pk8i6lod20ezzxm60bskm "NULL" "QnGw2" "NULL" "ZVlAoweRt" "8s" "uZxD26faV"
+$> ./xo0pk8i6lod20ezzxm60bskm "NULL" "QnGw2" "NULL" "ZVlAoweRt" "8s" "uZxD26faV"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./0dj1nk9y13vn868p8qx8eaej "xLs" "NULL" "xrmAnB1bN6o" "U9J" "LokKja" "cfVluMXK" "NULL" "NULL" "NULL" "qibLgz9RaodS" "uFr0" "a03Y" "NULL" "NULL" "xGjbFmJ0s" "D"
+$> ./0dj1nk9y13vn868p8qx8eaej "xLs" "NULL" "xrmAnB1bN6o" "U9J" "LokKja" "cfVluMXK" "NULL" "NULL" "NULL" "qibLgz9RaodS" "uFr0" "a03Y" "NULL" "NULL" "xGjbFmJ0s" "D"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./yxdappq68n052l9xgndz1wjt "JUqN" "qvK" "7" "CiG" "NULL" "NfT9Rj6z3" "tHKfFa4nmi" "NULL" "gN"
+$> ./yxdappq68n052l9xgndz1wjt "JUqN" "qvK" "7" "CiG" "NULL" "NfT9Rj6z3" "tHKfFa4nmi" "NULL" "gN"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./r6wsi02k4xmpdotvr192px1v "3q" "0YJUIWQHvod" "LmHI6c1e" "38D0" "NULL" "NULL" "FdZ" "NULL" "b9SpR4" "NULL"
+$> ./r6wsi02k4xmpdotvr192px1v "3q" "0YJUIWQHvod" "LmHI6c1e" "38D0" "NULL" "NULL" "FdZ" "NULL" "b9SpR4" "NULL"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./mjm65jfqim45wgncukcsa8yn "NULL" "NULL" "3c5paHxT92R" "NULL" "Z2PsCv" "wQ06N" "NULL" "NULL" "ZzON8EG0XB4f" "CPo" "NULL" "WQriepqP5c" "mDFLoqnMUbrg" "NULL"
+$> ./mjm65jfqim45wgncukcsa8yn "NULL" "NULL" "3c5paHxT92R" "NULL" "Z2PsCv" "wQ06N" "NULL" "NULL" "ZzON8EG0XB4f" "CPo" "NULL" "WQriepqP5c" "mDFLoqnMUbrg" "NULL"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex04 =========================================================================
+$> /usr/bin/norminette  ft_list_push_back.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_list_push_back.c ft_create_elem.c main.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror ft_list_push_back.c ft_create_elem.c main.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./d3xs887m99affk0onai6np7g "hKESf" "oCSbJv2Az" "TG3" "4EurhF" "xCH" "0fbBS7" "7z" "4vqOkGbB" "LoafpdwHjkvT" "Z7hvCRyDd" "NULL" ""
+$> ./d3xs887m99affk0onai6np7g "hKESf" "oCSbJv2Az" "TG3" "4EurhF" "xCH" "0fbBS7" "7z" "4vqOkGbB" "LoafpdwHjkvT" "Z7hvCRyDd" "NULL" ""
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex05 =========================================================================
+$> /usr/bin/norminette  ft_list_push_strs.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_list_push_strs.c ft_create_elem.c main.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror ft_list_push_strs.c ft_create_elem.c main.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./wy8i6h5944cx58lsg3gpg997 
+$> ./wy8i6h5944cx58lsg3gpg997 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./j0pzv39lox76f15lr0fu723n "4mCv7kxMIsGyZNR"
+$> ./j0pzv39lox76f15lr0fu723n "4mCv7kxMIsGyZNR"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./3ylx1n6y9xnofjbbzu8t3i4v "4aIRNKTE" "n" "UJd57gLr4RG1" "DK2" "7T" "0IAbhNXnzYHo" "ESl4hH8" "VpRkr1" "DSmy3J" "xT" "lU" "0b5x8" "fcpo6OmK" "dRBri"
+$> ./3ylx1n6y9xnofjbbzu8t3i4v "4aIRNKTE" "n" "UJd57gLr4RG1" "DK2" "7T" "0IAbhNXnzYHo" "ESl4hH8" "VpRkr1" "DSmy3J" "xT" "lU" "0b5x8" "fcpo6OmK" "dRBri"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./3lcyl7fdym0nlvyow8muu77c "x4W" "ogben7cvwUE" "NX" "6geUF08h9GQ5" "qGCXIKTda" "APCabQMvI"
+$> ./3lcyl7fdym0nlvyow8muu77c "x4W" "ogben7cvwUE" "NX" "6geUF08h9GQ5" "qGCXIKTda" "APCabQMvI"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./65npu9t57l9i8pikefj7l7c5 "WV8" "X6KcobQG2nN" "iDStHk" "7ICg6J" "9eXPwyLtElvm" "6O"
+$> ./65npu9t57l9i8pikefj7l7c5 "WV8" "X6KcobQG2nN" "iDStHk" "7ICg6J" "9eXPwyLtElvm" "6O"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./mso04az0g8ksodci0gdpub5s "rNbfodtJ" "IFABNP" "9SkXJmD" "xPI4ADbhzY" "Lcx6" "WT31F" "z7Sblv" "sTnhuGW0Xd" "0oCIdTa8wE" "bZ74BIldanO" "Dlhcx4SrvH" "RoPak"
+$> ./mso04az0g8ksodci0gdpub5s "rNbfodtJ" "IFABNP" "9SkXJmD" "xPI4ADbhzY" "Lcx6" "WT31F" "z7Sblv" "sTnhuGW0Xd" "0oCIdTa8wE" "bZ74BIldanO" "Dlhcx4SrvH" "RoPak"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./h3n9xskf6h79jej4v3jb72yy "c2LxmqA" "ZwAkE" "hUFbmX" "PmKtaW9U8" "5F" "wG0nF8" "infA" "kO95" "O16pKRqgIvr8" "nCBUa" "HN" "DWvZ42Q" "80B"
+$> ./h3n9xskf6h79jej4v3jb72yy "c2LxmqA" "ZwAkE" "hUFbmX" "PmKtaW9U8" "5F" "wG0nF8" "infA" "kO95" "O16pKRqgIvr8" "nCBUa" "HN" "DWvZ42Q" "80B"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./txse87uc2ddlxu4gmth8mu7z "Oj8PMpDqT6wH" "DQBeTqFLAgk3" "kF" "q1" "f" "GAg0uIxFUDt" "d2t9" "EuKT6Nzq2BeQ" "Y59XH" "IQ" "obKRp" "P91XYVzy" "EgnzDhy4mA" "SfQphN" "ZqIah5" "dUH"
+$> ./txse87uc2ddlxu4gmth8mu7z "Oj8PMpDqT6wH" "DQBeTqFLAgk3" "kF" "q1" "f" "GAg0uIxFUDt" "d2t9" "EuKT6Nzq2BeQ" "Y59XH" "IQ" "obKRp" "P91XYVzy" "EgnzDhy4mA" "SfQphN" "ZqIah5" "dUH"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./08ougg3e22kq5ihxhpbjmjgl "mYEDzrLUlN" "QDPe" "Cf2W5O1MUzi" "dnvcQ9FSEP" "VjT2hGQxyDw" "4p5A8mo" "USycZRAoDMV6" "jyhmA92" "Gk"
+$> ./08ougg3e22kq5ihxhpbjmjgl "mYEDzrLUlN" "QDPe" "Cf2W5O1MUzi" "dnvcQ9FSEP" "VjT2hGQxyDw" "4p5A8mo" "USycZRAoDMV6" "jyhmA92" "Gk"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex06 =========================================================================
+$> /usr/bin/norminette  ft_list.h ft_list_clear.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_clear.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_clear.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./7g60ys2w223f1tw0815k2znz  | sort
+$> ./7g60ys2w223f1tw0815k2znz  | sort
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./pgqzmcmnxk96803hfvqur0em "r7gCZSRFO8pe" | sort
+$> ./pgqzmcmnxk96803hfvqur0em "r7gCZSRFO8pe" | sort
+$> diff -U 3 user_output_test2 test2.output | cat -e
+--- user_output_test2	2021-08-20 16:58:34.000000000 +0000$
++++ test2.output	2021-08-20 16:58:34.000000000 +0000$
+@@ -0,0 +1,3 @@$
++=> r7gCZSRFO8pe$
++Data => r7gCZSRFO8pe$
++free => r7gCZSRFO8pe$
+
+Diff KO :(
+Grade: 0
+
+= ex07 =========================================================================
+$> /usr/bin/norminette  ft_list.h ft_list_at.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_at.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_at.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./emaii2648wdzkbp88knl90u6 
+$> ./emaii2648wdzkbp88knl90u6 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./q0ckviyr9awz9f4kaxmrzkaa "bN1DIO2seE8Cu"
+$> ./q0ckviyr9awz9f4kaxmrzkaa "bN1DIO2seE8Cu"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./vl703o2klojh9ef5unqtm5e6 "Bd" "gJSAU4q" "fnvwb85ROt6" "zifXr" "AYblzP6s" "KO9ZrM" "cLNmA83wKvaF" "wrasl7gk6jT" "O" "QpeoAKy" "A9V" "YMg4" "03I" "v6PxMpRL1VK" "iUn" "r0kwY"
+$> ./vl703o2klojh9ef5unqtm5e6 "Bd" "gJSAU4q" "fnvwb85ROt6" "zifXr" "AYblzP6s" "KO9ZrM" "cLNmA83wKvaF" "wrasl7gk6jT" "O" "QpeoAKy" "A9V" "YMg4" "03I" "v6PxMpRL1VK" "iUn" "r0kwY"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./95fa8ar7wzllrwvt70xu129b "sSyrIgh" "XPEr" "A" "HFCgaq2iof"
+$> ./95fa8ar7wzllrwvt70xu129b "sSyrIgh" "XPEr" "A" "HFCgaq2iof"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./yx31n0cyplm65sqo48nst29z "y6xUA" "feGtOrBD9E" "w9vBgCHFn8" "xFe2YKtgdIj" "1" "Xe9zy4" "DXqB" "TJrlD" "47QuFKLkMqb" "10V63v" "XLEHcp6meY7" "E6fwcpWDTZ" "xeih2wU6aLOk" "YxMz" "Yba7n0SZ4" "Kua9d7F"
+$> ./yx31n0cyplm65sqo48nst29z "y6xUA" "feGtOrBD9E" "w9vBgCHFn8" "xFe2YKtgdIj" "1" "Xe9zy4" "DXqB" "TJrlD" "47QuFKLkMqb" "10V63v" "XLEHcp6meY7" "E6fwcpWDTZ" "xeih2wU6aLOk" "YxMz" "Yba7n0SZ4" "Kua9d7F"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./l38lp19kz2fk34iom02nb5s8 "vVguc73" "ePJoK" "g4PexAqD5HOb" "hd" "OV" "5"
+$> ./l38lp19kz2fk34iom02nb5s8 "vVguc73" "ePJoK" "g4PexAqD5HOb" "hd" "OV" "5"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./9kru5051oobixlvw1mqjhp9b "uHTAIDiVtZd" "o1z" "tvgUpw9RJoL" "A" "p6xNjAUL" "6Aai7Xg" "P6" "IUOc9Vg8"
+$> ./9kru5051oobixlvw1mqjhp9b "uHTAIDiVtZd" "o1z" "tvgUpw9RJoL" "A" "p6xNjAUL" "6Aai7Xg" "P6" "IUOc9Vg8"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./7kcnm4k86rm0whwcemft0p5s "WMdaXP7" "YOu2" "RIjA" "6IltrG" "NJZIR1yt" "7rb6ti2NZSe" "CgDTKInRPH0"
+$> ./7kcnm4k86rm0whwcemft0p5s "WMdaXP7" "YOu2" "RIjA" "6IltrG" "NJZIR1yt" "7rb6ti2NZSe" "CgDTKInRPH0"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./2db6k8njjfoex9f7ri9ocvfz "V3xtObe" "16tQF4" "7qQR" "fo9NFwexBOmL" "yYVQMK5m8d" "VWKbGH8oCg" "l7P5DX" "E4gzno1U3LcG" "U3xZ6IsR4" "zo" "16uAnUaQjcP" "tRm9b3"
+$> ./2db6k8njjfoex9f7ri9ocvfz "V3xtObe" "16tQF4" "7qQR" "fo9NFwexBOmL" "yYVQMK5m8d" "VWKbGH8oCg" "l7P5DX" "E4gzno1U3LcG" "U3xZ6IsR4" "zo" "16uAnUaQjcP" "tRm9b3"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex08 =========================================================================
+$> /usr/bin/norminette  ft_list_reverse.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_reverse.c ft_create_elem.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_reverse.c ft_create_elem.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./6tcctzapntvcxb8ouvp2h1gs 
+$> ./6tcctzapntvcxb8ouvp2h1gs 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./ofi5sk6rn0l4do95qypdorvu "xE6sgtLz"
+$> ./ofi5sk6rn0l4do95qypdorvu "xE6sgtLz"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./5qtz8svloviv53acbuwzv2vl "PZJv" "Mh" "Ae0" "G1fgm" "dbAr5kqSEiP" "KJ" "YSvt" "a4sm"
+$> ./5qtz8svloviv53acbuwzv2vl "PZJv" "Mh" "Ae0" "G1fgm" "dbAr5kqSEiP" "KJ" "YSvt" "a4sm"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./gtkeiq6wicjgd2l6o2x02w0b "WnCt4XdA" "8q" "dOSKyVY8ro4" "p9dkFoTesD6" "TqsmR7G" "Xj1bRM" "F" "j" "foCjvd5FD" "aR0F" "pDzWI1kB" "GfNisBe"
+$> ./gtkeiq6wicjgd2l6o2x02w0b "WnCt4XdA" "8q" "dOSKyVY8ro4" "p9dkFoTesD6" "TqsmR7G" "Xj1bRM" "F" "j" "foCjvd5FD" "aR0F" "pDzWI1kB" "GfNisBe"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./ftvawhjbz8xxhmd6jcs41o86 "s4jhdNYiHJ" "PNQV08tWiO" "dvTOXZnzyr" "6xkTjIzoOA" "pdzZMfsNeEy" "qMaLX3EV" "vZJNUAsjCe" "4we2pdRJ" "0IY2v9htA" "9SuW1nI" "V9"
+$> ./ftvawhjbz8xxhmd6jcs41o86 "s4jhdNYiHJ" "PNQV08tWiO" "dvTOXZnzyr" "6xkTjIzoOA" "pdzZMfsNeEy" "qMaLX3EV" "vZJNUAsjCe" "4we2pdRJ" "0IY2v9htA" "9SuW1nI" "V9"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./gk2ju17k96hk81ng9er3hnfn "AMDhekGtB2" "Dq1S6n0P" "Ze4w6UD0" "uwIOK8AolZ0" "upF" "G" "yVUkwTmRuc" "dacUO8fXz"
+$> ./gk2ju17k96hk81ng9er3hnfn "AMDhekGtB2" "Dq1S6n0P" "Ze4w6UD0" "uwIOK8AolZ0" "upF" "G" "yVUkwTmRuc" "dacUO8fXz"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./q8my4njc6sbd7jel3g1a853a "yRpC" "Kiax" "P" "4QT1ASlFK" "F0" "Qt"
+$> ./q8my4njc6sbd7jel3g1a853a "yRpC" "Kiax" "P" "4QT1ASlFK" "F0" "Qt"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./0fhu80uqf6x2cswsyotqgi7a "qL23ZbUMI" "TfubcGdnA" "vhg7" "woZTzm" "zhdyK" "so9e2S1k7Q" "Ne249Di3f" "QlonX" "zYJ8dAw" "e"
+$> ./0fhu80uqf6x2cswsyotqgi7a "qL23ZbUMI" "TfubcGdnA" "vhg7" "woZTzm" "zhdyK" "so9e2S1k7Q" "Ne249Di3f" "QlonX" "zYJ8dAw" "e"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./bylkppow2x1pe4sygz4vptau "EtBuMLX" "hDMkvRp" "lydsRvgXTja" "ES1Ov6J" "SjJ2GFiKALCq" "Lr1shWbCK" "a" "2DvAFn" "YQ1mCZ8OqVAR" "CQKeWwxkB" "6KPs583S2" "iC" "J" "c4kovum2sIR"
+$> ./bylkppow2x1pe4sygz4vptau "EtBuMLX" "hDMkvRp" "lydsRvgXTja" "ES1Ov6J" "SjJ2GFiKALCq" "Lr1shWbCK" "a" "2DvAFn" "YQ1mCZ8OqVAR" "CQKeWwxkB" "6KPs583S2" "iC" "J" "c4kovum2sIR"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 5
+
+= ex09 =========================================================================
+$> /usr/bin/norminette  ft_list_foreach.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_foreach.c ft_create_elem.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_foreach.c ft_create_elem.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./pj9lq2wjd2f3d86tjwq1buyd 
+$> ./pj9lq2wjd2f3d86tjwq1buyd 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./ervejhqcenno33dqyu598glx "Xn5pHxF0N1"
+$> ./ervejhqcenno33dqyu598glx "Xn5pHxF0N1"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./klvv5pu7ohjszlk8aszrgczw "2bu9zAnZP" "uG6wzvrWoKDI" "jfEQCRxy38" "0D" "S4Eo95Uen" "Rcz9Fxl" "FpH"
+$> ./klvv5pu7ohjszlk8aszrgczw "2bu9zAnZP" "uG6wzvrWoKDI" "jfEQCRxy38" "0D" "S4Eo95Uen" "Rcz9Fxl" "FpH"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./x69nsoustnuubmd6i3hcto1o "J81R3KNG2" "l5" "PUrqKGnxYbD" "T3VNvCFr" "BMSbatn"
+$> ./x69nsoustnuubmd6i3hcto1o "J81R3KNG2" "l5" "PUrqKGnxYbD" "T3VNvCFr" "BMSbatn"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./1n1z2dwmyottuazq1nsw1o1e "sWHgfve" "wDmSKpv8VZg" "veunfwFp1" "71"
+$> ./1n1z2dwmyottuazq1nsw1o1e "sWHgfve" "wDmSKpv8VZg" "veunfwFp1" "71"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./ki5uytg4ifw9d3ugvj0y2r3m "fecmLMgQNZ" "wQkRKAONG" "4eWF0rthqmw3" "U8imBghCSA" "ZC" "r0bB5u4" "57KBZ4Y" "FZuPnHB5rM" "vj8" "1yNI" "m8CD4GBhJjFW" "yHbiL5" "fp3aY5sIwW" "4EnyvYe" "lZFfX47Vie"
+$> ./ki5uytg4ifw9d3ugvj0y2r3m "fecmLMgQNZ" "wQkRKAONG" "4eWF0rthqmw3" "U8imBghCSA" "ZC" "r0bB5u4" "57KBZ4Y" "FZuPnHB5rM" "vj8" "1yNI" "m8CD4GBhJjFW" "yHbiL5" "fp3aY5sIwW" "4EnyvYe" "lZFfX47Vie"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./vv6qziauj1ydhsvzy5g48vkg "w5" "8COS" "v4gd" "Es" "FGv" "JS" "EkD1" "sa" "ud7K" "df07oR" "Z6vL" "daj4qxtWNzlH" "FZe7Ed" "ln" "LNvn"
+$> ./vv6qziauj1ydhsvzy5g48vkg "w5" "8COS" "v4gd" "Es" "FGv" "JS" "EkD1" "sa" "ud7K" "df07oR" "Z6vL" "daj4qxtWNzlH" "FZe7Ed" "ln" "LNvn"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./drv1252sqtvmi2lbyxd07ibk "ziSRcQIU" "yMp3" "ruB4HU" "unODNFkJ" "yaJwDZBU" "64vrWP1ztwI" "SmI" "mFAtyacP21" "4"
+$> ./drv1252sqtvmi2lbyxd07ibk "ziSRcQIU" "yMp3" "ruB4HU" "unODNFkJ" "yaJwDZBU" "64vrWP1ztwI" "SmI" "mFAtyacP21" "4"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./sskcv5jqwt7f57t76o9mlvs2 "ycQmFZ1YdT9" "u68YC4n9XThq" "b6x3zfp" "9VNqrPOK" "p" "sMyhRGO2jf" "YTmzrvWkPUF" "RNrtvMA4n3"
+$> ./sskcv5jqwt7f57t76o9mlvs2 "ycQmFZ1YdT9" "u68YC4n9XThq" "b6x3zfp" "9VNqrPOK" "p" "sMyhRGO2jf" "YTmzrvWkPUF" "RNrtvMA4n3"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex10 =========================================================================
+$> /usr/bin/norminette  ft_list.h ft_list_foreach_if.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_foreach_if.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_create_elem.c ft_list_foreach_if.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./gurldtbjmxjen9xd6cpixi7n 
+$> ./gurldtbjmxjen9xd6cpixi7n 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./uwpsg51672bpg1iw85j02bua "kdmF"
+$> ./uwpsg51672bpg1iw85j02bua "kdmF"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./c48uzo8cgxkcjgewqkzfwzys "iwa7FsD" "GcYgOk" "o9eKquFVbBy" "FVZ9yIc" "ow2iqbUkPdH" "OJUlyq1vGs49" "X4m" "N" "UQIDKYLGZpo" "dqfB9vVz" "yqjKTAVEcao" "k" "LmfoJ" "qyHNXAeBi" "w"
+$> ./c48uzo8cgxkcjgewqkzfwzys "iwa7FsD" "GcYgOk" "o9eKquFVbBy" "FVZ9yIc" "ow2iqbUkPdH" "OJUlyq1vGs49" "X4m" "N" "UQIDKYLGZpo" "dqfB9vVz" "yqjKTAVEcao" "k" "LmfoJ" "qyHNXAeBi" "w"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./bxv2zd1owe4xuc2i8i8cak48 "07" "Gv4xKVmwlasE" "56aY2CUo" "gahOr9xTi5" "nTg3G" "vKnTpl62oV" "74qC3b8UO" "ioCyGW6tQg" "6axpc" "vQ8Jx" "Fyp4w6" "nS9Q" "acWUkjPEBfQ"
+$> ./bxv2zd1owe4xuc2i8i8cak48 "07" "Gv4xKVmwlasE" "56aY2CUo" "gahOr9xTi5" "nTg3G" "vKnTpl62oV" "74qC3b8UO" "ioCyGW6tQg" "6axpc" "vQ8Jx" "Fyp4w6" "nS9Q" "acWUkjPEBfQ"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./84lody5zlw6y8mw27kjiwupy "G" "kObMjqN2Il" "ZfhrvxsPRbiB" "UvYJN9gaZ" "Q" "s60KzLkQIh8"
+$> ./84lody5zlw6y8mw27kjiwupy "G" "kObMjqN2Il" "ZfhrvxsPRbiB" "UvYJN9gaZ" "Q" "s60KzLkQIh8"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./84f5dky9jq02dxwgho9c6gcp "7O52XJ9B1" "s" "Pk" "DwkFz86Q" "jXk" "NCQO9sVt" "xa8L2yUGM" "vr2fXaiUbc1"
+$> ./84f5dky9jq02dxwgho9c6gcp "7O52XJ9B1" "s" "Pk" "DwkFz86Q" "jXk" "NCQO9sVt" "xa8L2yUGM" "vr2fXaiUbc1"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./2r77eywq0ux3qlc7hfmrady9 "wgOKUEZHF" "2o3dD" "vxOH" "vpuERt" "UntqHw" "KXoD" "MYvd5Fi" "R" "1UDXGRK"
+$> ./2r77eywq0ux3qlc7hfmrady9 "wgOKUEZHF" "2o3dD" "vxOH" "vpuERt" "UntqHw" "KXoD" "MYvd5Fi" "R" "1UDXGRK"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./m88blg3uj2dsgqfis8jo9w3g "lC87" "FLwvYTVJBR" "GtR2yrVZd53i" "roWz" "QmFw9" "6TQqUwhxC" "xueQaAY1wf"
+$> ./m88blg3uj2dsgqfis8jo9w3g "lC87" "FLwvYTVJBR" "GtR2yrVZd53i" "roWz" "QmFw9" "6TQqUwhxC" "xueQaAY1wf"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./y5c41heswsy47nrwsxkc004p "ilMen" "1" "xuXh4" "dOYg4wHu" "2neQ1hlD8ya" "Fpi3XvH1TKwa" "dGQEK2b" "5kpW7r" "gFNter" "ut19K"
+$> ./y5c41heswsy47nrwsxkc004p "ilMen" "1" "xuXh4" "dOYg4wHu" "2neQ1hlD8ya" "Fpi3XvH1TKwa" "dGQEK2b" "5kpW7r" "gFNter" "ut19K"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex11 =========================================================================
+$> /usr/bin/norminette  ft_list_find.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_find.c ft_create_elem.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_list_find.c ft_create_elem.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./yw40ltobwy89kg8ae0e5ulqg 
+$> ./yw40ltobwy89kg8ae0e5ulqg 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./co4zl2ajfj7wuwyasw61xh6j "nksc9XEr"
+$> ./co4zl2ajfj7wuwyasw61xh6j "nksc9XEr"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./ruwsr135txhonpnqxajmdluq "PhC3" "1xP" "87WXiDx5IJ" "NW" "qgca" "LuVb4E2m" "x50hG8bJzd" "LsvG2" "M5lKRuLGI1OE"
+$> ./ruwsr135txhonpnqxajmdluq "PhC3" "1xP" "87WXiDx5IJ" "NW" "qgca" "LuVb4E2m" "x50hG8bJzd" "LsvG2" "M5lKRuLGI1OE"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./iq5t8vi0pzvaamokhwi92xvx "lCBcUVaHW" "v9HcXTbry" "o" "8fUprHY1jo" "z5eoK" "hyqv9w3STnCz" "OM9adsF" "0" "BtMrJ3VG" "qu8DYMf03" "twk9bLyrx0gX" "vru5Q" "B"
+$> ./iq5t8vi0pzvaamokhwi92xvx "lCBcUVaHW" "v9HcXTbry" "o" "8fUprHY1jo" "z5eoK" "hyqv9w3STnCz" "OM9adsF" "0" "BtMrJ3VG" "qu8DYMf03" "twk9bLyrx0gX" "vru5Q" "B"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./phtg9ur28kqgwrv98lnhzy9u "T5" "f3J" "lSI" "M0EO" "jT" "p" "CzVq36Wo0kM" "GSQ1xgipY" "psn"
+$> ./phtg9ur28kqgwrv98lnhzy9u "T5" "f3J" "lSI" "M0EO" "jT" "p" "CzVq36Wo0kM" "GSQ1xgipY" "psn"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./oedcna8qmvlhigqqvesxlavi "rfpyH4V1bxlD" "0t57UhNbHO" "9C4SEWo0Ts" "emODu1g5KB"
+$> ./oedcna8qmvlhigqqvesxlavi "rfpyH4V1bxlD" "0t57UhNbHO" "9C4SEWo0Ts" "emODu1g5KB"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./lt02t9ayvvxc8alooy5h6u7y "xRay0" "nOjW" "YF7KTA2j" "LmCfSsMX01i" "NG3BJtZcMvmY" "huaVOJ" "kVE" "09EPtkxz2RMf" "mKteqObU" "5sz4" "bROxqg" "JCMZyajsF5pI" "mtJMBHVuF1y" "q" "etf137TG"
+$> ./lt02t9ayvvxc8alooy5h6u7y "xRay0" "nOjW" "YF7KTA2j" "LmCfSsMX01i" "NG3BJtZcMvmY" "huaVOJ" "kVE" "09EPtkxz2RMf" "mKteqObU" "5sz4" "bROxqg" "JCMZyajsF5pI" "mtJMBHVuF1y" "q" "etf137TG"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./1zy2eodzwnwpq5prgtxg2ylk "bAu07zq" "U8X2" "VozN" "y9"
+$> ./1zy2eodzwnwpq5prgtxg2ylk "bAu07zq" "U8X2" "VozN" "y9"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./qj6iob93399k66o8lhlpmg4q "LBqrxToSef5Y" "4" "oA" "CMOsiDgShBW" "pZGYTWuKFxCH" "I" "A" "TDxwP" "DxMp3vuS" "2TKg5jdcNV" "PxHTuUw3Oae4" "ASksgcZh" "AonlgcqEK" "zgMAS"
+$> ./qj6iob93399k66o8lhlpmg4q "LBqrxToSef5Y" "4" "oA" "CMOsiDgShBW" "pZGYTWuKFxCH" "I" "A" "TDxwP" "DxMp3vuS" "2TKg5jdcNV" "PxHTuUw3Oae4" "ASksgcZh" "AonlgcqEK" "zgMAS"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 4
+
+= ex12 =========================================================================
+$> /usr/bin/norminette  ft_list_remove_if.c ft_list.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror ft_list_remove_if.c main.c ft_create_elem.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror ft_list_remove_if.c main.c ft_create_elem.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./ibwkhehwqesto3qlurczv8d8 
+Command './ibwkhehwqesto3qlurczv8d8 ' got killed by a Segmentation fault (Signal -11)
+Grade: 0
+
+= ex13 =========================================================================
+Nothing turned in
+Grade: 0
+
+= ex14 =========================================================================
+Nothing turned in
+Grade: 0
+
+= ex15 =========================================================================
+Nothing turned in
+Grade: 0
+
+= ex16 =========================================================================
+Nothing turned in
+Grade: 0
+
+= ex17 =========================================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 25 ==============================================================

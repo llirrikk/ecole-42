@@ -1,0 +1,146 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+at-o4.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+Sun Aug 15 11:37:38 MSK 2021
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.msk.21-school.ru:vogsphere/intra-uuid-ccb70a22-2b5c-48fa-9457-381e029566ef-3712026
+
+= Git history ==================================================================
+$> git -C /tmp/tmp2dh6CO/user log --pretty='%H - %an, %ad : %s'
+7a3d6fb154102c95247afc784cd1fd8d8a9cc410 - Silvia Serwyn, Sat Aug 14 17:21:45 2021 +0300 : 1st
+ 
+= Collected files ==========================================
+$> ls -lAR /tmp/tmp2dh6CO/user
+total 32
+-rw-r--r--  1 root  wheel  8196 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel   779 Aug 15 11:37 __GIT_HISTORY
+drwxr-xr-x  3 root  wheel    96 Aug 15 11:37 ex00
+drwxr-xr-x  4 root  wheel   128 Aug 15 11:37 ex01
+drwxr-xr-x  4 root  wheel   128 Aug 15 11:37 ex02
+drwxr-xr-x  4 root  wheel   128 Aug 15 11:37 ex03
+drwxr-xr-x  4 root  wheel   128 Aug 15 11:37 ex04
+drwxr-xr-x  4 root  wheel   128 Aug 15 11:37 ex05
+
+/tmp/tmp2dh6CO/user/ex00:
+total 8
+-rw-r--r--  1 root  wheel  1073 Aug 15 11:37 ft.h
+
+/tmp/tmp2dh6CO/user/ex01:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel  1207 Aug 15 11:37 ft_boolean.h
+
+/tmp/tmp2dh6CO/user/ex02:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel  1040 Aug 15 11:37 ft_abs.h
+
+/tmp/tmp2dh6CO/user/ex03:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel   991 Aug 15 11:37 ft_point.h
+
+/tmp/tmp2dh6CO/user/ex04:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel  1805 Aug 15 11:37 ft_strs_to_tab.c
+
+/tmp/tmp2dh6CO/user/ex05:
+total 24
+-rw-r--r--  1 root  wheel  6148 Aug 15 11:37 .DS_Store
+-rw-r--r--  1 root  wheel  1819 Aug 15 11:37 ft_show_tab.c
+ 
+= ex00 =========================================================================
+$> /usr/bin/norminette  ft.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_other.c -o user_exe 
+
+$> gcc -Wextra -Wall -Werror main.c ft_other.c -o ref_exe 
+
+= Test 1 ===================================================
+$> ./73ddd49dfh6jk7ykjg4k32c6
+$> ./73ddd49dfh6jk7ykjg4k32c6
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+All tests OK
+Grade: 1
+
+= ex01 =========================================================================
+$> /usr/bin/norminette -R CheckDefine ft_boolean.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror test_ft_boolean.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./3zegsf0xuz0j5uy48ys58tbd un
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+All tests OK
+Grade: 10
+
+= ex02 =========================================================================
+$> /usr/bin/norminette -R CheckDefine ft_abs.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./0oazr9rty0dal1ybvdfhly5t
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+All tests OK
+Grade: 10
+
+= ex03 =========================================================================
+$> /usr/bin/norminette  ft_point.h | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror test_ft_point.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./v90h2n8ohz4px8cfif3law6b
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+All tests OK
+Grade: 19
+
+= ex04 =========================================================================
+$> /usr/bin/norminette  ft_strs_to_tab.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_show_tab.c ft_strs_to_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./ywlqce4vk5xigmlfg6p032nc
+Command './ywlqce4vk5xigmlfg6p032nc' got killed by a Segmentation fault (Signal -11)
+Grade: 0
+
+= ex05 =========================================================================
+$> /usr/bin/norminette  ft_show_tab.c | grep -E '^(Error|Warning)'
+
+$> gcc -Wextra -Wall -Werror main.c ft_strs_to_tab.c ft_show_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./pk5wlm3gzcqv4v6pgu7x5lpt
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+All tests OK
+Grade: 30
+
+= Final grade: 40 ==============================================================
