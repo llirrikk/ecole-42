@@ -124,7 +124,7 @@ _Result: 50%_
 
 
 #### rush00
-_Result: gave up_
+_Result: 0% error with -y in pair (x, y)_
 
 
 

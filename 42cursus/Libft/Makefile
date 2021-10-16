@@ -70,7 +70,7 @@ all:		$(NAME)
 $(NAME):	$(OBJ) $(HEADER)
 			$(AR) $(NAME) $(OBJ) $(HEADER)
 
-%.o:		%.c
+%.o:		%.c $(HEADER)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
