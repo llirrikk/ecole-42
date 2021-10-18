@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 18:36:36 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/10/18 23:08:54 by sserwyn          ###   ########.fr       */
+/*   Created: 2021/10/18 23:08:54 by sserwyn           #+#    #+#             */
+/*   Updated: 2021/10/18 23:25:00 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_stream(int fd, char *full_line)
 {
@@ -102,15 +102,15 @@ char	*remove_left_side(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*full_line;
+	static char	*full_line[FD_MAX_COUNT];
 	char		*left_side_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return ((char *) NULL);
-	full_line = get_stream(fd, full_line);
-	if (!full_line)
+	full_line[fd] = get_stream(fd, full_line[fd]);
+	if (!full_line[fd])
 		return ((char *) NULL);
-	left_side_line = remove_right_side(full_line);
-	full_line = remove_left_side(full_line);
+	left_side_line = remove_right_side(full_line[fd]);
+	full_line[fd] = remove_left_side(full_line[fd]);
 	return (left_side_line);
 }
