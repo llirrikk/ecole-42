@@ -14,8 +14,8 @@
 
 char	*get_stream(int fd, char *full_line)
 {
-	char	*buff;
-	int		ret;
+	char			*buff;
+	long long int	ret;
 
 	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
@@ -102,7 +102,7 @@ char	*remove_left_side(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*full_line;
+	static char	*full_line = 0;
 	char		*left_side_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
