@@ -6,7 +6,7 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:04:49 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/11/23 23:58:24 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/11/24 14:17:27 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static int	not_invalid_argument(char *base, int base_size)
 	return (is_good);
 }
 
-void	ft_putnbr_base(int nbr, char *base, int *count_symbols)
+void	ft_putnbr_base(unsigned int nbr, char *base, int *count_symbols)
 {
 	long int	in_base;
 	int			count_leading_zeros;

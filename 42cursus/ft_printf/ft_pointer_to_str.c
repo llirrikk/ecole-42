@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pointer_to_str.c                                   :+:      :+:    :+:   */
+/*   ft_pointer_to_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 22:35:54 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/11/24 00:58:14 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/11/24 13:59:09 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	count_16_in_nbr(unsigned int p)
+char	*ft_strcpy(char *dest, char *src);
+
+size_t	count_16_in_nbr(unsigned long p)
 {
 	size_t	c;
 
@@ -25,12 +27,18 @@ size_t	count_16_in_nbr(unsigned int p)
 	return (c);
 }
 
-char	*pointer_to_str(unsigned int p)
+char	*pointer_to_str(unsigned long p)
 {
 	char	*str;
 	size_t	count_16_in_p;
 
-	count_16_in_p = count_16_in_nbr(p);
+	if (!p)
+	{
+		str = (char *)malloc(sizeof(char) * 5);
+		ft_strcpy(str, "(nil)");
+		return (str);
+	}
+	count_16_in_p = count_16_in_nbr((unsigned long)p);
 	str = (char *)malloc(sizeof(char) * (count_16_in_p + 2 + 1));
 	str[0] = '0';
 	str[1] = 'x';

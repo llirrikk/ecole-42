@@ -6,12 +6,14 @@
 /*   By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 22:56:01 by sserwyn           #+#    #+#             */
-/*   Updated: 2021/11/24 01:33:23 by sserwyn          ###   ########.fr       */
+/*   Updated: 2021/11/24 14:20:00 by sserwyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 #include "ft_printf.h"
+
+void	ft_handling_str_args(char spec, va_list args, int *count_symbols);
 
 void	parse_spec(char spec, va_list args, int *count_symbols)
 {
@@ -20,17 +22,13 @@ void	parse_spec(char spec, va_list args, int *count_symbols)
 	else if (spec == '%')
 		ft_putchar('%', count_symbols);
 	else if (spec == 'x')
-		ft_putnbr_base(va_arg(args, int), "0123456789abcdef", count_symbols);
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", count_symbols);
 	else if (spec == 'X')
-		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF", count_symbols);
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", count_symbols);
 	else if (spec == 's')
 		ft_putstr(va_arg(args, char *), count_symbols);
-	else if (spec == 'd' || spec == 'i')
-		ft_putstr(ft_itoa(va_arg(args, int)), count_symbols);
-	else if (spec == 'u')
-		ft_putstr(ft_ltoa(va_arg(args, unsigned int)), count_symbols);
-	else if (spec == 'p')
-		ft_putstr(pointer_to_str(va_arg(args, unsigned int)), count_symbols);
+	else if (spec == 'd' || spec == 'i' || spec == 'u' || spec == 'p')
+		ft_handling_str_args(spec, args, count_symbols);
 }
 
 void	parse_input(const char *input, va_list args, int *count_symbols)
@@ -69,5 +67,6 @@ int	ft_printf(const char *input, ...)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%c", "");
+// 	ft_printf("this is the real number: %x\n", -1u);
+// 	printf("this is the real number: %x\n", -1u);
 // }
