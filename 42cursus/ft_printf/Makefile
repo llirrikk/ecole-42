@@ -6,7 +6,7 @@
 #    By: sserwyn <sserwyn@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/17 17:20:45 by sserwyn           #+#    #+#              #
-#    Updated: 2021/11/24 15:09:09 by sserwyn          ###   ########.fr        #
+#    Updated: 2021/12/25 16:17:00 by sserwyn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ fclean:		clean
 
 re:			fclean all
 
-so:
-			gcc -shared -o libftprintf.so *.o
+# so:
+# 			gcc -shared -o libftprintf.so *.o
 
 .PHONY:		all clean fclean re

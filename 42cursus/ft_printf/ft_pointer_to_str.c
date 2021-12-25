@@ -34,8 +34,8 @@ char	*pointer_to_str(unsigned long p)
 
 	if (!p)
 	{
-		str = (char *)malloc(sizeof(char) * 5);
-		ft_strcpy(str, "(nil)");
+		str = (char *)malloc(sizeof(char) * 3);
+		ft_strcpy(str, "0x0");
 		return (str);
 	}
 	count_16_in_p = count_16_in_nbr((unsigned long)p);
