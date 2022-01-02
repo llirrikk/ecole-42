@@ -168,3 +168,11 @@ _Result: 125%_
 basic_tests: GNL OK | bonus_tests: GNL OK
 ```
 _Result: 125%_
+
+
+
+#### ft_printf
+```trace
+test_spdxiucpercent: 8/8 correct functions | bonus_one: KO (Does not compile) | bonus_two: KO (Does not compile)
+```
+_Result: 100%_
