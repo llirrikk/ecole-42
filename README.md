@@ -156,7 +156,8 @@ _Result: 70%_
 
 ### 42cursus
 #### Libft
->> This project is your very first project as a student at 42. You will need to recode a few functions of the C standard library as well as some other utility functions that you will use during your whole cursus.
+> This project is your very first project as a student at 42. You will need to recode a few functions of the C standard library as well as some other utility functions that you will use during your whole cursus.
+
 ```trace
 initial_errors:  | test_ft_isalnum: OK | test_ft_isalpha: OK | test_ft_isascii: OK | test_ft_isdigit: OK | test_ft_isprint: OK | test_ft_atoi: OK | test_ft_bzero: OK | test_ft_calloc: OK | test_ft_itoa: OK | test_ft_memchr: OK | test_ft_memcmp: OK | test_ft_memcpy: OK | test_ft_memmove: OK | test_ft_memset: OK | test_ft_putchar_fd: OK | test_ft_putendl_fd: OK | test_ft_putnbr_fd: OK | test_ft_putstr_fd: OK | test_ft_split: OK | test_ft_strchr: OK | test_ft_strdup: OK | test_ft_strjoin: OK | test_ft_strlcat: OK | test_ft_strlcpy: OK | test_ft_strlen: OK | test_ft_strmapi: OK | test_ft_striteri: OK | test_ft_strncmp: OK | test_ft_strnstr: OK | test_ft_strrchr: OK | test_ft_strtrim: OK | test_ft_substr: OK | test_ft_tolower: OK | test_ft_toupper: OK | bonus: 9/9 functions correct
 ```
@@ -165,7 +166,8 @@ _Result: 125%_
 
 
 #### get_next_line
->> May it be a file, stdin, or even later a network connection, you will always need a way to read content line by line. It is time to start working on this function, which will be essential for your future projects.
+> May it be a file, stdin, or even later a network connection, you will always need a way to read content line by line. It is time to start working on this function, which will be essential for your future projects.
+
 ```trace
 basic_tests: GNL OK | bonus_tests: GNL OK
 ```
@@ -174,7 +176,8 @@ _Result: 125%_
 
 
 #### ft_printf
->> This project is pretty straightforward, you have to recode printf. You will learn what is and how to implement variadic functions. Once you validate it, you will reuse this function in your future projects.
+> This project is pretty straightforward, you have to recode printf. You will learn what is and how to implement variadic functions. Once you validate it, you will reuse this function in your future projects.
+
 ```trace
 test_spdxiucpercent: 8/8 correct functions | bonus_one: KO (Does not compile) | bonus_two: KO (Does not compile)
 ```
@@ -183,5 +186,6 @@ _Result: 100%_
 
 
 #### Born2beRoot
->> This project aims to introduce you to the wonderful world of virtualization.
+> This project aims to introduce you to the wonderful world of virtualization.
+
 _Result: 125%_
