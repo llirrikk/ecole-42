@@ -18,7 +18,7 @@ choose vim.tiny
 ```
 update-alternatives --config editor
 ```
-seting ssh
+setting ssh
 ```
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.backup
 vim /etc/ssh/sshd_config
@@ -48,7 +48,8 @@ visudo -c
 ```
 reboot
 ```
-port forwarding in VirtualBox
+port `4242` forwarding in VirtualBox
+
 in PowerShell
 ```
 ssh sserwyn@localhost -p 4242
@@ -77,8 +78,8 @@ touch /var/log/sudo/sudo.log
 visudo
 ```
 - add `Defaults	log_input`
-- add `Defaults	"log_output`
-- add `Defaults	logfile=/var/log/sudo/sudo.log"`
+- add `Defaults	log_output`
+- add `Defaults	logfile="/var/log/sudo/sudo.log"`
 - add `Defaults	iolog_dir="/var/log/sudo"`
 ```
 visudo -c
@@ -96,7 +97,7 @@ vim /etc/systemd/logind.conf
 ```
 visudo
 ```
-- add `Defaults	requiretty` //TTY mode
+- add `Defaults	requiretty` _TTY mode_
 ```
 visudo -c
 ```
@@ -105,7 +106,7 @@ _For security reasons too, the paths that can be used by sudo must be restricted
 ```
 visudo
 ```
-- `Defaults	secure_path=...` to `Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"`
+- `Defaults	secure_path=<...>` to `Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"`
 ```
 visudo -c
 ```
@@ -126,7 +127,7 @@ gpasswd -d sserwyn bluetooth
 groups sserwyn
 ```
 
-политика паролей
+password policy
 ```
 cp /etc/login.defs /etc/login.defs.backup
 ```
@@ -221,13 +222,13 @@ mariadb -u sserwyn -p
 - `SHOW DATABASES;`
 - `\q`
 
-проброс портов
+ports `80` and `8080` forwarding in VirtualBox
 `localhost/wordpress` in browser
-- Имя базы данных:	`wordpress`
-- Имя пользователя:	`sserwyn`
-- Пароль:				`aboba`
-- Сервер базы данных:	`localhost`
-- Префикс таблиц:		`wp_`
+- DB Name: `wordpress`
+- User Name: `sserwyn`
+- Password: `aboba`
+- DB Server: `localhost`
+- Table prefix: `wp_`
 
 
 auto sending server info to telegram channel
