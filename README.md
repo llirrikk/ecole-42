@@ -45,6 +45,14 @@ _Result: 100%_
 
 _Result: 125%_
 
+
+
+#### [so_long](/42cursus/so_long)
+> This project is a small 2D game with [minilibx](https://github.com/42Paris/minilibx-linux). You'll learn about textures, sprites and tiles.
+
+
+_Result: 125%_
+
 ---
 
 ### [Piscine](https://42.fr/en/admissions/42-piscine/) (a trial month of intensive work)
