@@ -61,6 +61,12 @@ _Result: 125%_
 
 
 
+#### [pipex](/42cursus/pipex)
+> This project aims to make you understand a bit deeper two concepts from UNIX mechanism that you already know: the redirections and the pipes. It is an introduction project.
+
+_Result: 100%_
+
+
 ---
 
 ### [Piscine](https://42.fr/en/admissions/42-piscine/) (a trial month of intensive work)
