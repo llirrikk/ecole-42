@@ -67,6 +67,13 @@ _Result: 125%_
 _Result: 100%_
 
 
+
+#### [Philosophers](/42cursus/Philosophers)
+> In this project, you will learn the basics of threading a process. You will see how to create threads and you will discover mutexes.
+
+_Result: 125%_
+
+
 ---
 
 ### [Piscine](https://42.fr/en/admissions/42-piscine/) (a trial month of intensive work)
