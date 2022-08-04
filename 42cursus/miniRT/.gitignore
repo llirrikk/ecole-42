@@ -1,0 +1,11 @@
+cmake-build-debug/
+objs/
+*.o
+.idea/
+*.d
+.DS_Store
+*.a
+miniRT
+.vscode/
+mlx_linux/Makefile.gen
+mlx_linux/test/Makefile.gen

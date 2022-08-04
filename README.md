@@ -74,6 +74,14 @@ _Result: 100%_
 _Result: 125%_
 
 
+
+#### [miniRT](/42cursus/miniRT)
+> This project is an introduction to the beautiful world of Raytracing. Once completed you will be able to render simple Computer-Generated-Images and you will never be afraid of implementing mathematical formulas again.
+
+_Result: 103%_
+
+
+
 ---
 
 ### [Piscine](https://42.fr/en/admissions/42-piscine/) (a trial month of intensive work)

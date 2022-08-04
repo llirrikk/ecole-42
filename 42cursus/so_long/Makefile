@@ -10,7 +10,7 @@ SRC				= src/utils/ft_strcpy.c \
 					src/user_actions.c
 
 HEADER			= so_long.h
-MLXFLAGS		= -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLXFLAGS		= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM				= rm -f
 
 SRC				+= get_next_line/get_next_line_utils.c \
